@@ -1,26 +1,132 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Swiss / International Editorial (v6) Color Tokens
+   Dark canvas by default; toggles cleanly to light canvas via .light class. */
+:root,
+.dark {
+  --bg: #0a0a0a;
+  --surface: #111111;
+  --fg: #ededed;
+  --fg-muted: #a1a1a1;
+  --fg-subtle: #6b6b6b;
+  --line: #222222;
+  --invert-bg: #ededed;
+  --invert-fg: #0a0a0a;
+  color-scheme: dark;
+}
+
+.light {
+  --bg: #f5f5f3;
+  --surface: #ececea;
+  --fg: #0a0a0a;
+  --fg-muted: #525252;
+  --fg-subtle: #8a8a8a;
+  --line: #d4d4d4;
+  --invert-bg: #0a0a0a;
+  --invert-fg: #f5f5f3;
+  color-scheme: light;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-subtle: var(--fg-subtle);
+  --color-line: var(--line);
+  --color-invert-bg: var(--invert-bg);
+  --color-invert-fg: var(--invert-fg);
+  --font-sans: var(--font-helvetica-neue), "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  *,
+  *::before,
+  *::after {
+    border-radius: 0px;
+    border-color: var(--line);
+  }
+
+  html {
+    background-color: var(--bg);
+    color: var(--fg);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--invert-bg);
+    color: var(--invert-fg);
+  }
+
+  :focus-visible {
+    outline: 1px solid var(--fg);
+    outline-offset: 2px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Fluid Swiss Typographic Scale */
+.text-display-xl {
+  font-size: clamp(3.25rem, 9vw, 8.5rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 0.92;
+}
+
+.text-display {
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+.text-h2 {
+  font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.text-h3 {
+  font-size: clamp(1.125rem, 1.6vw, 1.5rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.text-mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+/* Respect user motion preferences across transitions */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
