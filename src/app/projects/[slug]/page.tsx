@@ -35,6 +35,16 @@ export async function generateMetadata({
   return {
     title: project.title,
     description: project.summary,
+    openGraph: {
+      title: `${project.title} — Marky Isulat`,
+      description: project.summary,
+      url: `/projects/${project.slug}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} — Marky Isulat`,
+      description: project.summary,
+    },
   };
 }
 
