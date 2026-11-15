@@ -1,7 +1,12 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { ResumeModalProvider } from "@/components/layout/ResumeModal";
+import { LoadingScreen } from "@/components/layout/LoadingScreen";
+import { SidebarShell } from "@/components/layout/SidebarShell";
+import { MobileTopBar } from "@/components/layout/MobileTopBar";
 import "./globals.css";
 
 const helveticaNeue = localFont({
@@ -121,7 +126,32 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          {children}
+          <ResumeModalProvider>
+            <LoadingScreen />
+            <Suspense
+              fallback={
+                <aside
+                  aria-hidden="true"
+                  className="fixed inset-y-0 left-0 z-30 hidden w-[260px] border-r border-line bg-bg lg:block"
+                />
+              }
+            >
+              <SidebarShell />
+            </Suspense>
+            <Suspense
+              fallback={
+                <header
+                  aria-hidden="true"
+                  className="fixed inset-x-0 top-0 z-40 h-14 border-b border-line bg-bg lg:hidden"
+                />
+              }
+            >
+              <MobileTopBar />
+            </Suspense>
+            <main className="flex min-h-screen flex-col pt-14 lg:pt-0 lg:pl-[260px]">
+              {children}
+            </main>
+          </ResumeModalProvider>
         </ThemeProvider>
       </body>
     </html>
