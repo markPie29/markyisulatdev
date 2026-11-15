@@ -109,6 +109,7 @@ export function CaseStudyGallerySection({
                       key={`${sub.title}-${media.src}`}
                       type="button"
                       onClick={() => openBySrc(media.src)}
+                      aria-label={`Expand ${media.alt}`}
                       className="group relative aspect-video w-full cursor-pointer overflow-hidden border border-line bg-surface text-left focus-visible:outline focus-visible:outline-1 focus-visible:outline-fg"
                     >
                       <Image
@@ -148,6 +149,7 @@ export function CaseStudyGallerySection({
               key={media.src}
               type="button"
               onClick={() => openBySrc(media.src)}
+              aria-label={`Expand ${media.alt}`}
               className="group relative aspect-video w-full cursor-pointer overflow-hidden border border-line bg-surface text-left focus-visible:outline focus-visible:outline-1 focus-visible:outline-fg"
             >
               <Image
