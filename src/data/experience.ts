@@ -80,7 +80,8 @@ export const EXPERIENCE_ROLES: ExperienceRole[] = [
     company: "Nexvision Innovations",
     workMode: "Internship · Enterprise Engineering",
     location: "Marikina City, Philippines",
-    logo: "/assets/brand-logos/nexvision-innovations.svg",
+    logo: "/assets/brand-logos/nexvision-innovations-mono.png",
+    invertOnLight: true,
     overview:
       "Contributed across core modules of an enterprise Fleet Management ERP (SK Logistics) serving 100+ active users across operational departments. Final deployment and client turnover were led by Nexvision's senior developers.",
     achievements: [
@@ -138,7 +139,8 @@ export const EXPERIENCE_ROLES: ExperienceRole[] = [
     company: "AP Global IT Solutions",
     workMode: "Trainee Internship",
     location: "Antipolo City, Philippines",
-    logo: "/assets/brand-logos/ap-global.svg",
+    logo: "/assets/brand-logos/ap-global-mono.png",
+    invertOnLight: true,
     overview:
       "Hands-on design trainee creating corporate branding and marketing visuals while observing full-stack engineering teams ship production web interfaces.",
     achievements: [

@@ -185,7 +185,7 @@ export function FeaturedProjectsCarousel({
                         };
 
             const cardInner = (
-              <article className="relative flex h-full flex-col justify-between border border-line bg-bg">
+              <article className="relative flex h-full flex-col justify-between overflow-hidden border border-line bg-bg bg-[radial-gradient(circle_at_78%_48%,color-mix(in_srgb,var(--fg)_7%,transparent),transparent_68%)]">
                 {/* Inset Framed Thumbnail (Upper Half) */}
                 <div className="p-4 pb-0">
                   <div className="relative aspect-[16/10] w-full overflow-hidden border border-line bg-surface">

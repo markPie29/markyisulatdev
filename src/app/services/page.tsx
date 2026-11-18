@@ -21,7 +21,7 @@ export default function ServicesPage() {
       <header className="mb-12 border-b border-line pb-8">
         <Reveal immediate>
           <p className="text-mono-label mb-3 text-fg-subtle">
-            06 / SERVICES, ADVISORY &amp; BOOKING
+            05 / SERVICES, ADVISORY &amp; BOOKING
           </p>
         </Reveal>
         <MaskHeading as="h1" immediate className="text-display text-fg">

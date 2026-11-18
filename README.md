@@ -11,12 +11,12 @@ Personal portfolio website for **Mark Angelo A. Isulat ("Marky")** — **Product
 
 ## Routes
 
-* `/` — `01 Overview`: Vertically centered Hero split (`Product-Oriented Full-Stack Developer.`) + portrait/KPIs, 5-project `FeaturedProjectsCarousel.tsx`, Experience ledger, Stack summary, Testimonials, Services & Consultations, and Closing CTA.
+* `/` — `01 Overview`: Vertically centered Hero split (`Product-Oriented Full-Stack Developer.`) + portrait/KPIs, 5-project `FeaturedProjectsCarousel.tsx` with radial gray card sheen, Experience ledger (company name first, monochrome brand logo on right), Stack summary, `3×2` hover-invert `HomeServicesGrid.tsx` (`Services & Consultations`), Testimonials, and Closing CTA.
 * `/projects` & `/projects/[slug]` — `02 Projects`: Tabbed showcase across Real Users, Passion & Explorations, and Multimedia & Brand Design, plus sticky `4/8` case studies.
-* `/experience` — `03 Experience`: 5-role career ledger framed through The Engineer's Lens, plus Education, Honors & Verified Certifications.
+* `/experience` — `03 Experience`: 5-role career ledger framed through The Engineer's Lens with theme-adaptive monochrome logos (`BrandLogo.tsx`), plus Education, Honors & Verified Certifications.
 * `/stack` — `04 Stack`: `01 — THE PRODUCT-ORIENTED EDGE` pillars and 5-category proof-backed technical tool matrix.
-* `/testimonials` — `05 Testimonials`: Verified client perspectives paired with case-study previews.
-* `/services` — `06 Services`: Core services, 3-tier consultation selector, and Zod-validated booking inquiry form.
+* `/services` — `05 Services`: Core services, 3-tier consultation selector (`#business`, `#speaking`, `#thesis-capstone` hash anchors), and Zod-validated booking inquiry form.
+* `/testimonials` — `06 Testimonials`: Verified client perspectives paired with case-study previews.
 
 ## Source-of-Truth Documentation
 

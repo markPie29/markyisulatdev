@@ -195,6 +195,7 @@ export interface ServiceOffering {
   title: string;
   headline: string;
   shortTags: string[];
+  homeBullets: [string, string, string];
   description: string;
   deliverables: string[];
   proofs: ServiceProofLink[];
@@ -207,7 +208,9 @@ export interface ConsultationTier {
   title: string;
   priceLabel: string;
   durationLabel: string;
+  shortDurationLabel: string;
   description: string;
   highlights: string[];
+  homeBullets: [string, string, string];
   requiresCoffeeSupport?: boolean;
 }

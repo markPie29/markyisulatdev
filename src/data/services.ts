@@ -24,6 +24,11 @@ export const CORE_SERVICES: ServiceOffering[] = [
       "AI Integration",
       "Booking & ERP Platforms",
     ],
+    homeBullets: [
+      "Custom web & desktop applications",
+      "Local & cloud AI integration",
+      "Automated booking, CMS & ERP systems",
+    ],
     description:
       "End-to-end engineering from relational Supabase/PostgreSQL schemas and multi-role security policies to responsive, code-first interfaces built directly in React 19, Next.js, TypeScript, and Electron.",
     deliverables: [
@@ -47,6 +52,11 @@ export const CORE_SERVICES: ServiceOffering[] = [
       "Brand Identity Systems",
       "Graphic Design & Pubmats",
       "Video Editing & Motion",
+    ],
+    homeBullets: [
+      "Brand identity & visual guidelines",
+      "Retail apparel, packaging & pubmats",
+      "Short-form video & motion graphics",
     ],
     description:
       "Visual systems shaped for real-world printing, social conversion, and brand cohesion—spanning logos, packaging, event pubmats, retail streetwear, and short-form promotional video.",
@@ -72,6 +82,11 @@ export const CORE_SERVICES: ServiceOffering[] = [
       "Marketing Strategy",
       "Conversion & Ad Campaigns",
     ],
+    homeBullets: [
+      "Social media management & calendars",
+      "Klaviyo email & ad campaign creative",
+      "Conversion audits & pop-up support",
+    ],
     description:
       "Practical campaign execution grounded in both digital conversion funnels and live face-to-face pop-up booth selling—removing messaging ambiguity so prospects understand the offer immediately.",
     deliverables: [
@@ -96,12 +111,18 @@ export const CONSULTATION_TIERS: ConsultationTier[] = [
     title: "Free Business Consultation",
     priceLabel: "FREE",
     durationLabel: "30 MIN DISCOVERY CALL",
+    shortDurationLabel: "30 MIN CALL",
     description:
       "Evaluate whether one of my software engineering, multimedia design, or digital marketing services fits your business goals, workflow bottlenecks, and delivery timeline.",
     highlights: [
       "Audit current manual bottlenecks or conversion friction",
       "Scope practical build vs. buy options and timeline estimates",
       "Leave with a clear technical or creative action plan",
+    ],
+    homeBullets: [
+      "Audit workflow & conversion bottlenecks",
+      "Scope build vs. buy & timelines",
+      "Clear technical or creative action plan",
     ],
   },
   {
@@ -111,12 +132,18 @@ export const CONSULTATION_TIERS: ConsultationTier[] = [
     title: "Free Speaking Events",
     priceLabel: "FREE",
     durationLabel: "KEYNOTE / PANEL / WORKSHOP",
+    shortDurationLabel: "TALK / PANEL",
     description:
       "Available pro-bono for university student orgs, charity initiatives, and community tech events covering full-stack software engineering, product-oriented development, UI/UX, and real-world marketing.",
     highlights: [
       "Practical talks on shipping full-stack & AI software as a student",
       "Code-first UI/UX engineering and hackathon pitching insights",
       "Bridging design, digital marketing, and modern web development",
+    ],
+    homeBullets: [
+      "Student engineering & AI shipping talks",
+      "Code-first UI/UX & hackathon pitching",
+      "Bridging design, marketing & web dev",
     ],
   },
   {
@@ -126,12 +153,18 @@ export const CONSULTATION_TIERS: ConsultationTier[] = [
     title: "Thesis & Capstone System Review",
     priceLabel: "BUY ME A COFFEE",
     durationLabel: "3-HOUR WORKING SESSION",
+    shortDurationLabel: "3-HR REVIEW",
     description:
       "Focused 3-hour technical and UX review of your capstone or thesis project—helping student teams tighten architecture, database schemas, UI clarity, and defense readiness.",
     highlights: [
       "System architecture, ERD / database & API flow review",
       "Hands-on UI/UX polish to make complex features easy to demo",
       "Panel defense Q&A prep and critical bug-triage guidance",
+    ],
+    homeBullets: [
+      "Architecture, ERD & API flow review",
+      "UI/UX polish for live defense demos",
+      "Panel Q&A prep & bug triage",
     ],
     requiresCoffeeSupport: true,
   },

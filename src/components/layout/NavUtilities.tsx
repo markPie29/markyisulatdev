@@ -29,8 +29,8 @@ export function getActiveNavIndex(pathname: string): number {
   if (pathname.startsWith("/projects")) return 1;
   if (pathname.startsWith("/experience")) return 2;
   if (pathname.startsWith("/stack")) return 3;
-  if (pathname.startsWith("/testimonials")) return 4;
-  if (pathname.startsWith("/services")) return 5;
+  if (pathname.startsWith("/services")) return 4;
+  if (pathname.startsWith("/testimonials")) return 5;
   return 0;
 }
 

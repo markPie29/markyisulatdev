@@ -99,9 +99,11 @@ export function ServicesBookingClient({
       if (SERVICE_ID_SET.has(rawHash)) {
         setValue("serviceFocus", rawHash as ServiceId, { shouldDirty: false });
       } else if (TIER_ID_SET.has(rawHash)) {
-        setValue("consultationTier", rawHash as ConsultationTierId, {
-          shouldDirty: false,
-        });
+        const tierId = rawHash as ConsultationTierId;
+        setValue("consultationTier", tierId, { shouldDirty: false });
+        if (tierId === "speaking" || tierId === "thesis-capstone") {
+          setValue("serviceFocus", "general-advisory", { shouldDirty: false });
+        }
       }
     };
 
@@ -294,70 +296,71 @@ export function ServicesBookingClient({
           {consultations.map((tier, idx) => {
             const isSelected = selectedTier === tier.id;
             return (
-              <Reveal
-                key={tier.id}
-                delay={idx * 0.04}
-                className={cn(
-                  "flex flex-col justify-between p-6 transition-colors sm:p-7",
-                  isSelected ? "bg-surface" : "bg-bg",
-                )}
-              >
-                <div>
-                  <div className="mb-4 flex items-center justify-between gap-2 border-b border-line pb-3">
-                    <span className="font-mono text-xs tracking-wider text-fg-subtle">
-                      {`${tier.index} // ${tier.kicker}`}
-                    </span>
-                    {isSelected && (
-                      <span className="bg-invert-bg px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-invert-fg">
-                        Selected
-                      </span>
-                    )}
-                  </div>
-
-                  <h3 className="text-h3 text-fg">{tier.title}</h3>
-
-                  <div className="mt-3 flex flex-wrap items-baseline gap-3 font-mono text-xs">
-                    <span className="border border-line bg-bg px-2.5 py-1 font-medium text-fg">
-                      {tier.priceLabel}
-                    </span>
-                    <span className="text-fg-subtle">{tier.durationLabel}</span>
-                  </div>
-
-                  <p className="mt-4 text-sm leading-relaxed text-fg-muted">
-                    {tier.description}
-                  </p>
-
-                  <ul className="mt-5 space-y-2 border-t border-line pt-4">
-                    {tier.highlights.map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-start gap-2.5 text-xs leading-relaxed text-fg-muted sm:text-sm"
-                      >
-                        <span
-                          className="mt-2 h-1 w-1 shrink-0 bg-fg-subtle"
-                          aria-hidden="true"
-                        />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <button
-                  type="button"
-                  onClick={() => handleSelectTier(tier.id, true)}
+              <Reveal key={tier.id} delay={idx * 0.04} className="h-full bg-bg">
+                <div
+                  id={tier.id}
                   className={cn(
-                    "mt-6 inline-flex w-full items-center justify-between border px-4 py-2.5 font-mono text-xs uppercase tracking-wider transition-colors",
-                    isSelected
-                      ? "border-fg bg-invert-bg text-invert-fg"
-                      : "border-line bg-bg text-fg hover:border-fg hover:bg-surface",
+                    "scroll-mt-20 flex h-full flex-col justify-between p-6 transition-colors sm:p-7",
+                    isSelected ? "bg-surface" : "bg-bg",
                   )}
                 >
-                  <span>
-                    {isSelected ? "Selected — Continue to Form" : "Select Tier"}
-                  </span>
-                  <ArrowDown size={13} aria-hidden="true" />
-                </button>
+                  <div>
+                    <div className="mb-4 flex items-center justify-between gap-2 border-b border-line pb-3">
+                      <span className="font-mono text-xs tracking-wider text-fg-subtle">
+                        {`${tier.index} // ${tier.kicker}`}
+                      </span>
+                      {isSelected && (
+                        <span className="bg-invert-bg px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-invert-fg">
+                          Selected
+                        </span>
+                      )}
+                    </div>
+
+                    <h3 className="text-h3 text-fg">{tier.title}</h3>
+
+                    <div className="mt-3 flex flex-wrap items-baseline gap-3 font-mono text-xs">
+                      <span className="border border-line bg-bg px-2.5 py-1 font-medium text-fg">
+                        {tier.priceLabel}
+                      </span>
+                      <span className="text-fg-subtle">{tier.durationLabel}</span>
+                    </div>
+
+                    <p className="mt-4 text-sm leading-relaxed text-fg-muted">
+                      {tier.description}
+                    </p>
+
+                    <ul className="mt-5 space-y-2 border-t border-line pt-4">
+                      {tier.highlights.map((item) => (
+                        <li
+                          key={item}
+                          className="flex items-start gap-2.5 text-xs leading-relaxed text-fg-muted sm:text-sm"
+                        >
+                          <span
+                            className="mt-2 h-1 w-1 shrink-0 bg-fg-subtle"
+                            aria-hidden="true"
+                          />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={() => handleSelectTier(tier.id, true)}
+                    className={cn(
+                      "mt-6 inline-flex w-full items-center justify-between border px-4 py-2.5 font-mono text-xs uppercase tracking-wider transition-colors",
+                      isSelected
+                        ? "border-fg bg-invert-bg text-invert-fg"
+                        : "border-line bg-bg text-fg hover:border-fg hover:bg-surface",
+                    )}
+                  >
+                    <span>
+                      {isSelected ? "Selected — Continue to Form" : "Select Tier"}
+                    </span>
+                    <ArrowDown size={13} aria-hidden="true" />
+                  </button>
+                </div>
               </Reveal>
             );
           })}

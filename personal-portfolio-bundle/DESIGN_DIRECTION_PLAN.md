@@ -15,7 +15,7 @@
 | **Color & Imagery** | Strict monochrome UI. Hero portrait has its background removed and rendered in monochrome/grayscale; project images render in grayscale by default and transition to full color on hover (and full color on `/projects/:slug` case studies) |
 | **Typography** | **Helvetica Neue** (Light, Roman, Medium, Bold) + **Monospace** (JetBrains Mono / Geist Mono) for indices, tags, and metadata |
 | **Headlines** | Sentence case, Medium/Bold weight, tight negative tracking (`-0.04em`), fluid `clamp()` sizing |
-| **Architecture** | **Hub & Deep-Dive (Multi-Page):** Quick-scroll Overview on `/` + 5 dedicated deep-dive pages (`/projects`, `/experience`, `/stack`, `/testimonials`, `/services`) + `/projects/:slug` case studies |
+| **Architecture** | **Hub & Deep-Dive (Multi-Page):** Quick-scroll Overview on `/` + 5 dedicated deep-dive pages (`/projects`, `/experience`, `/stack`, `/services`, `/testimonials`) + `/projects/:slug` case studies |
 | **Sidebar Nav** | Fixed left sidebar (~260px) using monochrome `LineSidebar` with `01`–`06` route items; collapses to a top bar + full-screen overlay under `1024px` |
 | **Motion** | Native browser scroll (no Lenis, no GSAP). 100% powered by `motion/react`: `<Reveal>` fade-ups (`16px -> 0`), line-mask slide-up on headings, `250ms` route transitions, and a once-per-session typographic loader |
 | **Shapes & Icons** | `0px` border radius, hairline borders, text + arrow (`↗`) links, inverted solid block for primary CTA, plus **small monochrome accent icons** (`lucide-react` + `react-icons/si`) |
@@ -61,8 +61,8 @@ flowchart LR
   Home --> CS
   Home --> E["/experience — 03 Experience & Credentials (4/8 Split + 6/6 Ledger)"]
   Home --> ST["/stack — 04 Complete Stack (3 Pillars + Contextual Matrix)"]
-  Home --> T["/testimonials — 05 Testimonials (Quote + Project Proof 7/5 Split)"]
-  Home --> SV["/services — 06 Services & Consultations (4/8 Services + 3-Col Selector + Booking)"]
+  Home --> SV["/services — 05 Services & Consultations (4/8 Services + 3-Col Selector + Booking)"]
+  Home --> T["/testimonials — 06 Testimonials (Quote + Project Proof 7/5 Split)"]
 ```
 
 ### Fixed Left Sidebar (`≥1024px`, ~260px wide)
@@ -74,8 +74,8 @@ Full-Stack Developer        ← Subtitle (--fg-muted)
 02  Projects                ← /projects (also active on /projects/:slug)
 03  Experience              ← /experience
 04  Stack                   ← /stack
-05  Testimonials            ← /testimonials
-06  Services                ← /services
+05  Services                ← /services
+06  Testimonials            ← /testimonials
 
 ● Available for work        ← Mono status
 [GH]     [LI]     [FB]     [DC] ← Icon-only social links (`justify-between`, no border/box, no text)
@@ -107,7 +107,7 @@ Resume ↗ · ☾/☀ · PHT Time   ← Resume modal/download, theme toggle, liv
 
 ### 4.2 `02 — FEATURED PROJECTS` (5-Project Peek-a-Boo Vertical Card Carousel)
 - **Projects (Circular 5-Card Loop):** `01 Snapsort` → `02 SK Logistics` → `03 Doze Beauty Lounge` → `04 Kado Kohi` → `05 Off Grid Lifestyle PH`
-- **Layout & Proportions:** `390px` vertical rectangle cards with inset `16:10` framed thumbnail (grayscale at rest on desktop, full color + `scale-[1.03]` zoom on center hover), locked 2-line `text-h2` title (`h-[2.25em]`), hairline-separated 2-line mono bullets (with `Trophy` icon on `"TOP 2 HACKATHON"`), and bare `18px` `<TechIcon />` stack logos.
+- **Layout & Proportions:** `390px` vertical rectangle cards (`bg-bg` with subtle monochrome radial gray sheen `circle_at_78%_48%`) featuring an inset `16:10` framed thumbnail (grayscale at rest on desktop, full color + `scale-[1.03]` zoom on center hover), locked 2-line `text-h2` title (`h-[2.25em]`), hairline-separated 2-line mono bullets (with `Trophy` icon on `"TOP 2 HACKATHON"`), and bare `18px` `<TechIcon />` stack logos.
 - **Stage & Motion:** Flanking left/right neighbor cards sit separated at `±92%` offset, `scale: 0.84`, `15%` opacity (`32%` on hover), and `2px` blur behind a horizontal stage edge mask fade (remaining 2 off-stage cards sit hidden at `±145%`, `opacity: 0`). Cycles automatically every `2.5s` (`AUTO_ADVANCE_MS = 2500`), pauses on center-card hover, and resets on manual side-card click, horizontal swipe, or `←`/`→` keyboard navigation.
 ```
 ───────────────────────────────────────────────────────────────────────────────
@@ -129,16 +129,16 @@ Resume ↗ · ☾/☀ · PHT Time   ← Resume modal/download, theme toggle, liv
 ───────────────────────────────────────────────────────────────────────────────
 ```
 
-### 4.3 `03 — EXPERIENCE` (Clean 5-Row Ledger: Date · Role · Company · Logo Only)
+### 4.3 `03 — EXPERIENCE` (Clean 5-Row Ledger: Date · Role · Company · Logo on Right)
 ```
 ───────────────────────────────────────────────────────────────────────────────
 03 — EXPERIENCE                               Full experience & credentials ↗
 ───────────────────────────────────────────────────────────────────────────────
-2024 — PRESENT       Founder                                      [logo] Marked Media
-AUG 2026 — PRESENT   Digital Marketing & Graphic Designer         [logo] Off Grid Lifestyle PH
-2026                 Full Stack Web Developer (Intern)            [logo] Nexvision Innovations
-2024 — 2026          Digital Marketing & Content Specialist       [logo] Marketing Hive
-2023                 Designer & Developer Trainee                 [logo] AP Global IT Solutions
+2024 — PRESENT       Founder                                      Marked Media [logo]
+AUG 2026 — PRESENT   Digital Marketing & Graphic Designer         Off Grid Lifestyle PH [logo]
+2026                 Full Stack Web Developer (Intern)            Nexvision Innovations [logo]
+2024 — 2026          Digital Marketing & Content Specialist       Marketing Hive [logo]
+2023                 Designer & Developer Trainee                 AP Global IT Solutions [logo]
 ───────────────────────────────────────────────────────────────────────────────
   <-- Cols 1-3 -->     <--------------- Cols 4-8 --------------->   <------ Cols 9-12 ------>
 ```
@@ -155,10 +155,35 @@ AUG 2026 — PRESENT   Digital Marketing & Graphic Designer         [logo] Off G
 ───────────────────────────────────────────────────────────────────────────────
 ```
 
-### 4.5 `05 — TESTIMONIALS` (3 Real Client Pull-Quotes)
+### 4.5 `05 — SERVICES & CONSULTATIONS` (`3×2` Swiss Hairline Matrix via `HomeServicesGrid.tsx`)
+- **Structure:** Unified `3×2` hairline grid (`gap-px border-line bg-line md:grid-cols-3`, collapsing to 1 column on mobile) linking directly to `/services#<id>`:
+  - **Top Row (`bg-bg`, Core Services):** `Software Development` (`Code2`), `Multimedia Design` (`Palette`), `Digital Marketing` (`TrendingUp`).
+  - **Bottom Row (`bg-surface/45`, Consultations):** `Free Business Consultation` (`Briefcase`), `Free Speaking Events` (`Mic`), `Thesis & Capstone System Review` (`GraduationCap`).
+- **Desktop Resting & Hover States (`md:`+):** Uniform `304px–312px` cards feature a giant faded center-right `lucide-react` icon (`156–184px`, `strokeWidth={0.85}` with diagonal `mask-image` alpha fade + monochrome radial gray sheen), top-left mono tags (`SERVICE 01`–`03` / `FREE` / `BUY ME A COFFEE`), and bottom-left huge title + hover micro-cue. Hover/focus smoothly inverts the card (`bg-invert-bg text-invert-fg`) and cross-fades to the title, 3 concise `homeBullets`, and `Explore scope ↗` / `Select & book ↗` CTA.
+- **Mobile (`< md`):** Displays icon badge, mono tags, title, 3 bullets, and CTA visibly by default.
 ```
 ───────────────────────────────────────────────────────────────────────────────
-05 — TESTIMONIALS                                        All client reviews ↗
+05 — SERVICES & CONSULTATIONS                       Explore services & book ↗
+───────────────────────────────────────────────────────────────────────────────
+┌─────────────────────────┬─────────────────────────┬─────────────────────────┐
+│ SERVICE 01       [</>]  │ SERVICE 02       [🎨]   │ SERVICE 03       [↗]    │
+│ (Giant faded icon +     │ (Giant faded icon +     │ (Giant faded icon +     │
+│  radial gray sheen)     │  radial gray sheen)     │  radial gray sheen)     │
+│ Software Development    │ Multimedia Design       │ Digital Marketing       │
+│ HOVER FOR SCOPE ↗       │ HOVER FOR SCOPE ↗       │ HOVER FOR SCOPE ↗       │
+├─────────────────────────┼─────────────────────────┼─────────────────────────┤
+│ FREE · 30 MIN    [💼]   │ FREE · TALK      [🎤]   │ BUY ME A COFFEE  [🎓]   │
+│ Free Business           │ Free Speaking           │ Thesis & Capstone       │
+│ Consultation            │ Events                  │ System Review           │
+│ HOVER TO SELECT ↗       │ HOVER TO SELECT ↗       │ HOVER TO SELECT ↗       │
+└─────────────────────────┴─────────────────────────┴─────────────────────────┘
+  * Desktop hover/focus inverts cell to reveal 3 bullets + direct CTA *
+```
+
+### 4.6 `06 — TESTIMONIALS` (3 Real Client Pull-Quotes) + Closing CTA Footer
+```
+───────────────────────────────────────────────────────────────────────────────
+06 — TESTIMONIALS                                        All client reviews ↗
 ───────────────────────────────────────────────────────────────────────────────
 "Having an automated booking website completely changed how we     Hajie Alejandro
  handle appointments. Clients book treatments seamlessly online,   Doze Beauty Lounge · WEB APP & BOOKING CMS
@@ -172,19 +197,6 @@ AUG 2026 — PRESENT   Digital Marketing & Graphic Designer         [logo] Off G
 ───────────────────────────────────────────────────────────────────────────────
 "Thanks ... The logo collaboration we did for Leah Borbon's        Novy Marquez
  Hope For Angels Shelter was way too fast finished. It's a wrap!"  Hope for Angels · BRAND IDENTITY & REBRANDING
-───────────────────────────────────────────────────────────────────────────────
-```
-
-### 4.6 `06 — SERVICES` + Consultations Strip + Closing CTA Footer
-```
-───────────────────────────────────────────────────────────────────────────────
-06 — SERVICES & CONSULTATIONS                       Explore services & book ↗
-───────────────────────────────────────────────────────────────────────────────
-01  Software Development     Custom Web & Desktop Systems  /  AI Integration  /  Booking & ERP Platforms        Explore ↗
-02  Multimedia Design        Brand Identity Systems  /  Graphic Design & Pubmats  /  Video Editing & Motion     Explore ↗
-03  Digital Marketing        Social Media Management  /  Marketing Strategy  /  Conversion & Ad Campaigns       Explore ↗
-───────────────────────────────────────────────────────────────────────────────
-[CONSULTATIONS]  ● Free Business Consultation   ·   ● Free Speaking Events   ·   ● Thesis & Capstone 3-Hr Review (Buy Me a Coffee)   →  Book on /services ↗
 ═══════════════════════════════════════════════════════════════════════════════
 
 Let's work together.
@@ -258,6 +270,7 @@ Have a software build, brand campaign, speaking invite, or capstone system to re
 
 ### 6.1 Work Experience (Asymmetric 4 / 8 Split per Role)
 Ordered: **01 Marked Media (Founder)** → **02 Off Grid Lifestyle PH** → **03 Nexvision Innovations Inc.** → **04 Marketing Hive** → **05 AP Global IT Solutions Inc.**
+*(Logos render via `BrandLogo.tsx` using inline `currentColor` SVG for Marked Media, Light/Dark PNGs for Off Grid Lifestyle PH, and theme-adaptive monochrome PNGs with `invertOnLight: true` for Nexvision Innovations [`nexvision-innovations-mono.png`, wide `w-auto px-2.5` badge on `/experience`], Marketing Hive [`marketing-hive-mono.png`], and AP Global IT Solutions [`ap-global-mono.png`].)*
 ```
 ───────────────────────────────────────────────────────────────────────────────
 ┌────────────────────────────┬────────────────────────────────────────────────┐
@@ -338,29 +351,9 @@ Ordered: **01 Marked Media (Founder)** → **02 Off Grid Lifestyle PH** → **03
 
 ---
 
-## 8. Page 05: `/testimonials` — Editorial Quote + Project Proof Split
+## 8. Page 05: `/services` — Services, Consultations & Booking Flow
 
-```
-───────────────────────────────────────────────────────────────────────────────
-01 / CLIENT REVIEW                                   WEB APP & BOOKING CMS
-┌───────────────────────────────────────────────┬─────────────────────────────┐
-│ "Having an automated booking website          │ ┌─────────────────────────┐ │
-│  completely changed how we handle             │ │ [DOZE BEAUTY LOUNGE     │ │
-│  appointments. Clients book treatments        │ │  SCREENSHOT PREVIEW]    │ │
-│  seamlessly online, and our team can manage   │ └─────────────────────────┘ │
-│  packages anytime without friction."          │                             │
-│                                               │ Delivered: Automated        │
-│ — Hajie Alejandro                             │ Booking & Package CMS       │
-│   Doze Beauty Lounge                          │ [ View Case Study ↗ ]       │
-└───────────────────────────────────────────────┴─────────────────────────────┘
-  <------------------ 7 Cols ----------------->   <--------- 5 Cols -------->
-```
-
----
-
-## 9. Page 06: `/services` — Services, Consultations & Booking Flow
-
-### 9.1 Part 1: The 3 Core Services (4 / 8 Editorial Rows)
+### 8.1 Part 1: The 3 Core Services (4 / 8 Editorial Rows)
 ```
 ───────────────────────────────────────────────────────────────────────────────
 ┌────────────────────────────┬────────────────────────────────────────────────┐
@@ -377,7 +370,7 @@ Ordered: **01 Marked Media (Founder)** → **02 Off Grid Lifestyle PH** → **03
 └────────────────────────────┴────────────────────────────────────────────────┘
 ```
 
-### 9.2 Part 2: `#consultations` — 3-Column Consultation Selector
+### 8.2 Part 2: `#consultations` — 3-Column Consultation Selector (`#business`, `#speaking`, `#thesis-capstone`)
 ```
 ═══════════════════════════════════════════════════════════════════════════════
 02 — CONSULTATIONS & SPEAKING                        Select a tier to book ↓
@@ -397,9 +390,30 @@ Ordered: **01 Marked Media (Founder)** → **02 Off Grid Lifestyle PH** → **03
 └─────────────────────────┴─────────────────────────┴─────────────────────────┘
 ```
 
-### 9.3 Part 3: `#booking` — Modular Booking & Inquiry Section
+### 8.3 Part 3: `#booking` — Modular Booking & Inquiry Section
 - **Zero-DB Static First:** Built as a clean modular section using `react-hook-form` + `zod` with an adapter pattern so you can plug in **Resend** (via a Next.js Server Action) and/or a **Cal.com** embed later without touching the UI layout.
+- Supports hash pre-selection on load (`#software-development`, `#multimedia-design`, `#digital-marketing`, `#business`, `#speaking`, `#thesis-capstone`).
 - When `03 / Thesis & Capstone` is selected, reveals **Step 1 — Support via Buy Me a Coffee** (`[ ☕ Buy Me a Coffee ↗ ]` + reference/note input) alongside the 3-hour session details.
+
+---
+
+## 9. Page 06: `/testimonials` — Editorial Quote + Project Proof Split
+
+```
+───────────────────────────────────────────────────────────────────────────────
+01 / CLIENT REVIEW                                   WEB APP & BOOKING CMS
+┌───────────────────────────────────────────────┬─────────────────────────────┐
+│ "Having an automated booking website          │ ┌─────────────────────────┐ │
+│  completely changed how we handle             │ │ [DOZE BEAUTY LOUNGE     │ │
+│  appointments. Clients book treatments        │ │  SCREENSHOT PREVIEW]    │ │
+│  seamlessly online, and our team can manage   │ └─────────────────────────┘ │
+│  packages anytime without friction."          │                             │
+│                                               │ Delivered: Automated        │
+│ — Hajie Alejandro                             │ Booking & Package CMS       │
+│   Doze Beauty Lounge                          │ [ View Case Study ↗ ]       │
+└───────────────────────────────────────────────┴─────────────────────────────┘
+  <------------------ 7 Cols ----------------->   <--------- 5 Cols -------->
+```
 
 ---
 
@@ -428,13 +442,13 @@ marky-portfolio-2k26/
 │   ├── resumes/                           # Mark_Isulat_Developer_Resume.pdf
 │   └── assets/                            # Copied from personal-portfolio-bundle/assets/
 │       ├── personal/                      # hero-portrait-cutout-bw.png, avatar.png, main-icon.svg
-│       ├── brand-logos/                   # Marked Media, Off Grid, Nexvision, etc.
-│       └── projects/                      # real-projects/ & passion-projects/ screenshots + demo.mp4
+│       ├── brand-logos/                   # Marked Media SVG, Off Grid Light/Dark PNGs, Nexvision/Marketing Hive/AP Global mono PNGs
+│       └── projects/                      # real-projects/, passion-projects/, multimedia-design/ screenshots + demo.mp4
 ├── src/
 │   ├── app/
 │   │   ├── layout.tsx                     # Root HTML, local fonts, ThemeProvider, persistent Left Sidebar shell
 │   │   ├── template.tsx                   # 250ms content-area fade transition between routes
-│   │   ├── page.tsx                       # 01 Overview (/) — Hero + 5 Sneak-Peek Lists
+│   │   ├── page.tsx                       # 01 Overview (/) — Hero + Overview Sections 02–06
 │   │   ├── opengraph-image.tsx            # Dynamic Swiss monochrome OG card for Home
 │   │   ├── sitemap.ts                     # Auto-generated sitemap for all routes & case studies
 │   │   ├── robots.ts                      # SEO robots rules
@@ -447,10 +461,10 @@ marky-portfolio-2k26/
 │   │   │   └── page.tsx                   # 03 Experience & Credentials (/experience)
 │   │   ├── stack/
 │   │   │   └── page.tsx                   # 04 Complete Tech & Design Stack (/stack)
-│   │   ├── testimonials/
-│   │   │   └── page.tsx                   # 05 Testimonials + Project Proof (/testimonials)
-│   │   └── services/
-│   │       └── page.tsx                   # 06 Services + 3 Consultations + #booking Form (/services)
+│   │   ├── services/
+│   │   │   └── page.tsx                   # 05 Services + 3 Consultations + #booking Form (/services)
+│   │   └── testimonials/
+│   │       └── page.tsx                   # 06 Testimonials + Project Proof (/testimonials)
 │   ├── components/
 │   │   ├── layout/
 │   │   │   ├── SidebarShell.tsx           # Desktop 260px fixed sidebar (Identity + LineSidebar + Footer)
@@ -462,16 +476,18 @@ marky-portfolio-2k26/
 │   │   │   ├── MaskHeading.tsx            # Line-mask slide-up heading primitive
 │   │   │   └── HairlineRule.tsx           # 1px left-to-right scaleX divider
 │   │   ├── home/
-│   │   │   └── FeaturedProjectsCarousel.tsx # 5-project Peek-a-Boo 2.5s auto-play vertical card carousel
-│   │   ├── projects/                      # CategoryTabs, ProjectShowcaseSpread, CaseStudyGalleryLightbox
-│   │   └── services/                      # ConsultationTierSelector, ModularBookingForm
+│   │   │   ├── FeaturedProjectsCarousel.tsx # 5-project Peek-a-Boo 2.5s auto-play vertical card carousel
+│   │   │   └── HomeServicesGrid.tsx       # 3x2 Swiss hairline Services & Consultations hover-invert card grid
+│   │   ├── projects/                      # ProjectsTabsView, CaseStudyGallerySection, CaseStudyLightbox
+│   │   ├── services/                      # ServicesBookingClient
+│   │   └── ui/                            # BrandLogo, TechIcon, SectionHeader, ResumeTriggerButton
 │   ├── data/                              # Zero-DB static typed source of truth
-│   │   ├── profile.ts                     # Identity, thesis, KPIs, socials
+│   │   ├── profile.ts                     # Identity, thesis, KPIs, socials, 01–06 nav
 │   │   ├── projects.ts                    # Real Users (4), Passion (5), Multimedia (8)
 │   │   ├── experience.ts                  # 5 Roles (Marked Media Founder -> AP Global) + Credentials
 │   │   ├── stack.ts                       # 3 Unfair Advantage Pillars + 5 Categorized Tool Matrices
 │   │   ├── testimonials.ts                # Hajie Alejandro, Humphrey Lacambra, Novy Marquez + proof links
-│   │   └── services.ts                    # 3 Core Services + 3 Consultation Tiers
+│   │   └── services.ts                    # 3 Core Services + 3 Consultation Tiers + homeBullets
 │   └── types/
 │       └── portfolio.ts                   # Strict TypeScript interfaces for all content modules
 ├── tailwind.config.ts / postcss.config.mjs

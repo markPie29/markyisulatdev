@@ -12,6 +12,7 @@ import { TechIcon } from "@/components/ui/TechIcon";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { MaskHeading } from "@/components/motion/MaskHeading";
 import { Reveal } from "@/components/motion/Reveal";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Experience & Credentials",
@@ -71,7 +72,14 @@ export default function ExperiencePage() {
                   </div>
 
                   <div className="mb-4 flex items-center gap-3">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center border border-line bg-surface p-2">
+                    <div
+                      className={cn(
+                        "flex h-10 shrink-0 items-center justify-center border border-line bg-surface",
+                        role.slug === "nexvision-innovations"
+                          ? "w-auto px-2.5"
+                          : "w-10 p-2",
+                      )}
+                    >
                       <BrandLogo role={role} className="h-5 w-auto max-w-full" />
                     </div>
                     <div className="min-w-0">

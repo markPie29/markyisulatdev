@@ -11,6 +11,27 @@ export interface BrandLogoProps {
   decorative?: boolean;
 }
 
+const BITMAP_METRICS: Record<
+  string,
+  { width: number; height: number; containerClass: string }
+> = {
+  "nexvision-innovations": {
+    width: 192,
+    height: 53,
+    containerClass: "w-[74px]",
+  },
+  "ap-global-it-solutions": {
+    width: 165,
+    height: 159,
+    containerClass: "w-5",
+  },
+  "marketing-hive": {
+    width: 256,
+    height: 248,
+    containerClass: "w-5",
+  },
+};
+
 /**
  * Renders monochrome company logos across both Dark and Light Swiss editorial themes.
  */
@@ -44,60 +65,6 @@ export function BrandLogo({
     );
   }
 
-  if (role.slug === "nexvision-innovations") {
-    return (
-      <span
-        className={cn(
-          "inline-flex h-5 w-5 shrink-0 items-center justify-center text-fg",
-          className,
-        )}
-        aria-hidden={decorative}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 32 32"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          className="h-full w-full"
-          role={decorative ? undefined : "img"}
-          aria-label={decorative ? undefined : role.company}
-        >
-          <rect x="3" y="3" width="26" height="26" />
-          <path d="M9 23V9l14 14V9" />
-        </svg>
-      </span>
-    );
-  }
-
-  if (role.slug === "ap-global-it-solutions") {
-    return (
-      <span
-        className={cn(
-          "inline-flex h-5 w-5 shrink-0 items-center justify-center text-fg",
-          className,
-        )}
-        aria-hidden={decorative}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 32 32"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          className="h-full w-full"
-          role={decorative ? undefined : "img"}
-          aria-label={decorative ? undefined : role.company}
-        >
-          <rect x="3" y="3" width="26" height="26" />
-          <circle cx="16" cy="16" r="7" />
-          <line x1="9" y1="16" x2="23" y2="16" />
-          <line x1="16" y1="9" x2="16" y2="23" />
-        </svg>
-      </span>
-    );
-  }
-
   if (role.logoLight) {
     return (
       <span
@@ -125,10 +92,17 @@ export function BrandLogo({
     );
   }
 
+  const metrics = BITMAP_METRICS[role.slug] ?? {
+    width: 256,
+    height: 248,
+    containerClass: "w-5",
+  };
+
   return (
     <span
       className={cn(
-        "inline-flex h-5 w-5 shrink-0 items-center justify-center",
+        "inline-flex h-5 shrink-0 items-center justify-center",
+        metrics.containerClass,
         className,
       )}
       aria-hidden={decorative}
@@ -136,8 +110,8 @@ export function BrandLogo({
       <Image
         src={role.logo}
         alt={alt}
-        width={256}
-        height={248}
+        width={metrics.width}
+        height={metrics.height}
         className={cn(
           "h-full w-auto object-contain grayscale",
           role.invertOnLight && "invert dark:invert-0",

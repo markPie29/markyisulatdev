@@ -70,7 +70,7 @@ export const PROFILE: ProfileData = {
     { index: "02", label: "Projects", href: "/projects" },
     { index: "03", label: "Experience", href: "/experience" },
     { index: "04", label: "Stack", href: "/stack" },
-    { index: "05", label: "Testimonials", href: "/testimonials" },
-    { index: "06", label: "Services", href: "/services" },
+    { index: "05", label: "Services", href: "/services" },
+    { index: "06", label: "Testimonials", href: "/testimonials" },
   ],
 };

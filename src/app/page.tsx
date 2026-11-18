@@ -12,6 +12,7 @@ import { TechIcon } from "@/components/ui/TechIcon";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ResumeTriggerButton } from "@/components/ui/ResumeTriggerButton";
 import { FeaturedProjectsCarousel } from "@/components/home/FeaturedProjectsCarousel";
+import { HomeServicesGrid } from "@/components/home/HomeServicesGrid";
 import { MaskHeading } from "@/components/motion/MaskHeading";
 import { Reveal } from "@/components/motion/Reveal";
 import { HairlineRule } from "@/components/motion/HairlineRule";
@@ -141,8 +142,8 @@ export default function HomePage() {
                   {role.role}
                 </span>
                 <span className="flex items-center gap-3 text-sm text-fg-muted md:col-span-4 md:justify-end">
-                  <BrandLogo role={role} />
                   <span>{role.company}</span>
+                  <BrandLogo role={role} />
                 </span>
               </Link>
             </Reveal>
@@ -183,10 +184,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 05 / TESTIMONIALS (3 Real Client Pull-Quotes) */}
-      <section aria-label="Client testimonials" className="pb-16 lg:pb-24">
+      {/* 05 / SERVICES & CONSULTATIONS (3x2 Card Matrix) */}
+      <section aria-label="Services and consultations" className="pb-16 lg:pb-24">
         <SectionHeader
           index="05"
+          title="SERVICES & CONSULTATIONS"
+          actionLabel="Explore services & book"
+          actionHref="/services"
+          className="mb-6"
+        />
+
+        <HomeServicesGrid
+          services={CORE_SERVICES}
+          consultations={CONSULTATION_TIERS}
+        />
+      </section>
+
+      {/* 06 / TESTIMONIALS (3 Real Client Pull-Quotes) */}
+      <section aria-label="Client testimonials" className="pb-16 lg:pb-20">
+        <SectionHeader
+          index="06"
           title="TESTIMONIALS"
           actionLabel="All client reviews"
           actionHref="/testimonials"
@@ -209,70 +226,6 @@ export default function HomePage() {
             </Reveal>
           ))}
         </div>
-      </section>
-
-      {/* 06 / SERVICES & CONSULTATIONS */}
-      <section aria-label="Services and consultations" className="pb-16 lg:pb-20">
-        <SectionHeader
-          index="06"
-          title="SERVICES & CONSULTATIONS"
-          actionLabel="Explore services & book"
-          actionHref="/services"
-        />
-
-        <div className="divide-y divide-line border-b border-line">
-          {CORE_SERVICES.map((service, idx) => (
-            <Reveal key={service.id} delay={idx * 0.05}>
-              <Link
-                href={`/services#${service.id}`}
-                className="group grid grid-cols-1 items-center gap-3 py-5 transition-colors hover:bg-surface/60 lg:grid-cols-12 lg:gap-6 lg:px-3"
-              >
-                <div className="flex items-baseline gap-4 lg:col-span-4">
-                  <span className="font-mono text-xs text-fg-subtle">
-                    {service.index}
-                  </span>
-                  <span className="text-base font-medium tracking-tight text-fg">
-                    {service.title}
-                  </span>
-                </div>
-                <p className="text-sm text-fg-muted lg:col-span-6">
-                  {service.shortTags.join(" / ")}
-                </p>
-                <span className="inline-flex items-center gap-1 font-mono text-xs uppercase tracking-wider text-fg-muted transition-colors group-hover:text-fg lg:col-span-2 lg:justify-end">
-                  <span>Explore</span>
-                  <ArrowUpRight size={13} aria-hidden="true" />
-                </span>
-              </Link>
-            </Reveal>
-          ))}
-        </div>
-
-        {/* Consultations Strip */}
-        <Reveal>
-          <Link
-            href="/services#consultations"
-            className="mt-5 flex flex-col justify-between gap-4 border border-line bg-surface p-4 transition-colors hover:border-fg sm:flex-row sm:items-center sm:px-5"
-          >
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-fg">
-              <span className="font-mono uppercase tracking-wider text-fg-subtle">
-                [CONSULTATIONS]
-              </span>
-              {CONSULTATION_TIERS.map((tier) => (
-                <span key={tier.id} className="inline-flex items-center gap-1.5">
-                  <span aria-hidden="true" className="inline-block h-1 w-1 bg-fg" />
-                  <span>
-                    {tier.title}
-                    {tier.requiresCoffeeSupport ? " (Buy Me a Coffee)" : ""}
-                  </span>
-                </span>
-              ))}
-            </div>
-            <span className="inline-flex shrink-0 items-center gap-1 font-mono text-xs uppercase tracking-wider text-fg">
-              <span>Book on /services</span>
-              <ArrowUpRight size={13} aria-hidden="true" />
-            </span>
-          </Link>
-        </Reveal>
       </section>
 
       {/* CLOSING CTA FOOTER */}

@@ -91,15 +91,15 @@ Unified reverse-chronological timeline framed through **The Engineer's Lens**:
 ### Phase 1: Compile & Bundle Developer Dossier & Assets *(Completed)*
 * Compiled `personal-portfolio-bundle/` with `MASTER_PLAN.md`, `SOFTWARE_PORTFOLIO_DATA.md`, modular `docs/`, synced `resumes/`, and 73 clean deduplicated files (`assets/` + `resumes/Mark_Isulat_Developer_Resume.pdf`).
 
-### Phase 2: Personal Portfolio Initialization (Next Project)
-* Spin up your dedicated Personal Developer Portfolio codebase.
-* Copy `personal-portfolio-bundle/assets/` into the new repo's `public/` directory.
-* Ingest `SOFTWARE_PORTFOLIO_DATA.md` and `docs/` to build out:
+### Phase 2: Personal Portfolio Initialization *(Completed — Live in This Repository)*
+* Built the dedicated Personal Developer Portfolio codebase (`marky-portfolio-2k26`) on Next.js 16 + TypeScript + Tailwind CSS v4 (see [`DESIGN_DIRECTION_PLAN.md`](./DESIGN_DIRECTION_PLAN.md) for the live UI/layout spec and `src/` for implementation).
+* Active 6-route navigation & Home overview order: `01 Overview` (`/`), `02 Projects` (`/projects` & `/projects/[slug]`), `03 Experience` (`/experience`), `04 Stack` (`/stack`), `05 Services` (`/services`), and `06 Testimonials` (`/testimonials`).
+* Home overview (`src/app/page.tsx`) includes:
   * Hero section focused on **Product-Oriented Full-Stack Developer** positioning (*"I don't just build systems; I build systems that help actual users"*).
-  * Dual project tabs: **Real Projects with Actual Users** & **Passion Projects & Technical Explorations**.
-  * Project case study drawers/modals highlighting **"The Human & UX Touch"**.
-  * Unified 5-role Work Experience timeline with **"The Engineer's Lens"**.
-  * Clean skills matrix, education, DOST scholarship, and verified credentials.
+  * 5-project Peek-a-Boo `FeaturedProjectsCarousel` with subtle monochrome radial gray surface sheen.
+  * 5-role Work Experience ledger (company name followed by theme-adaptive monochrome logo via `BrandLogo.tsx`, including `nexvision-innovations-mono.png` and `ap-global-mono.png`).
+  * `3×2` Swiss hairline `HomeServicesGrid` (top row Services, bottom row Consultations; giant faded icons at rest with inverted hover/focus reveal linking to `/services#<id>`).
+  * Dual-plus-multimedia project tabs (`Real Users`, `Passion & Explorations`, `Multimedia & Brand Design`), sticky `4/8` case studies, full `4/8` Experience + Credentials ledger, contextual Stack matrix, Services + `#consultations` + `#booking` flow, and Client Testimonials.
 
 ### Phase 3: Transform `react-portfolio-2k26` into Marked Media Official Site
 * Rebrand navigation, hero, and metadata from "Mark Angelo Isulat" to **Marked Media**.

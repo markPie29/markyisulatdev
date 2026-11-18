@@ -19,7 +19,7 @@ export default function TestimonialsPage() {
       <header className="mb-12 border-b border-line pb-8">
         <Reveal immediate>
           <p className="text-mono-label mb-3 text-fg-subtle">
-            05 / CLIENT TESTIMONIALS &amp; VERIFIED DELIVERY
+            06 / CLIENT TESTIMONIALS &amp; VERIFIED DELIVERY
           </p>
         </Reveal>
         <MaskHeading as="h1" immediate className="text-display text-fg">
