@@ -11,7 +11,7 @@ Personal portfolio website for **Mark Angelo A. Isulat ("Marky")** — **Product
 
 ## Routes
 
-* `/` — `01 Overview`: Vertically centered Hero split (`Product-Oriented Full-Stack Developer.`) + portrait/KPIs, Featured Projects, Experience ledger, Stack summary, Testimonials, Services & Consultations, and Closing CTA.
+* `/` — `01 Overview`: Vertically centered Hero split (`Product-Oriented Full-Stack Developer.`) + portrait/KPIs, 5-project `FeaturedProjectsCarousel.tsx`, Experience ledger, Stack summary, Testimonials, Services & Consultations, and Closing CTA.
 * `/projects` & `/projects/[slug]` — `02 Projects`: Tabbed showcase across Real Users, Passion & Explorations, and Multimedia & Brand Design, plus sticky `4/8` case studies.
 * `/experience` — `03 Experience`: 5-role career ledger framed through The Engineer's Lens, plus Education, Honors & Verified Certifications.
 * `/stack` — `04 Stack`: `01 — THE PRODUCT-ORIENTED EDGE` pillars and 5-category proof-backed technical tool matrix.

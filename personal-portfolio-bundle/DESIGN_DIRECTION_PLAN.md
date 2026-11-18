@@ -105,22 +105,27 @@ Resume ↗ · ☾/☀ · PHT Time   ← Resume modal/download, theme toggle, liv
   <------------------ 7 Cols ----------------->   <--------- 5 Cols -------->
 ```
 
-### 4.2 `02 — FEATURED PROJECTS` (Top 3 Flagship Builds Only)
+### 4.2 `02 — FEATURED PROJECTS` (5-Project Peek-a-Boo Vertical Card Carousel)
+- **Projects (Circular 5-Card Loop):** `01 Snapsort` → `02 SK Logistics` → `03 Doze Beauty Lounge` → `04 Kado Kohi` → `05 Off Grid Lifestyle PH`
+- **Layout & Proportions:** `390px` vertical rectangle cards with inset `16:10` framed thumbnail (grayscale at rest on desktop, full color + `scale-[1.03]` zoom on center hover), locked 2-line `text-h2` title (`h-[2.25em]`), hairline-separated 2-line mono bullets (with `Trophy` icon on `"TOP 2 HACKATHON"`), and bare `18px` `<TechIcon />` stack logos.
+- **Stage & Motion:** Flanking left/right neighbor cards sit separated at `±92%` offset, `scale: 0.84`, `15%` opacity (`32%` on hover), and `2px` blur behind a horizontal stage edge mask fade (remaining 2 off-stage cards sit hidden at `±145%`, `opacity: 0`). Cycles automatically every `2.5s` (`AUTO_ADVANCE_MS = 2500`), pauses on center-card hover, and resets on manual side-card click, horizontal swipe, or `←`/`→` keyboard navigation.
 ```
 ───────────────────────────────────────────────────────────────────────────────
 02 — FEATURED PROJECTS                                    View all projects ↗
 ───────────────────────────────────────────────────────────────────────────────
-01  Snapsort                                             ┌──────────────────┐
-    LOCAL AI MEDIA PIPELINE · 🏆 TOP 2 HACKATHON         │ [16:9 Cover Img] │ ↗
-    [e] Electron 34 / [r] React 19 / [t] TS / [p] Python │ (Gray -> Color)  │
-─────────────────────────────────────────────────────────┴──────────────────┴──
-02  SK Logistics Fleet Management System                 ┌──────────────────┐
-    ENTERPRISE LOGISTICS ERP · 100+ ACTIVE USERS         │ [16:9 Cover Img] │ ↗
-    [r] React / [n] Next.js / [e] Express / [s] Supabase │ (Gray -> Color)  │
-─────────────────────────────────────────────────────────┴──────────────────┴──
-03  Doze Beauty Lounge                                   ┌──────────────────┐
-    AUTOMATED BOOKING & PACKAGE CMS                      │ [16:9 Cover Img] │ ↗
-    [n] Next.js / [r] React / [t] TypeScript / Supabase  │ (Gray -> Color)  │
+   [05 · Off Grid]             ┌───────────────────────────┐       [02 · SK Logistics]
+  (15% · 2px Blur)             │  ┌─────────────────────┐  │       (15% · 2px Blur)
+  Click to center              │  │ [Inset 16:10 Cover] │  │       Click to center
+                               │  │  (Gray → Color+Zoom)│  │
+                               │  └─────────────────────┘  │
+                               │  01         CASE STUDY ↗  │
+                               │  Snapsort                 │  ← 2-line H2 slot
+                               │  ───────────────────────  │
+                               │  🏆 TOP 2 HACKATHON       │
+                               │  • LOCAL AI MEDIA PIPELINE│
+                               │  ───────────────────────  │
+                               │  [e] [r] [ts] [tw] [z] [t]│  ← Bare 18px logos
+                               └───────────────────────────┘
 ───────────────────────────────────────────────────────────────────────────────
 ```
 
@@ -456,7 +461,8 @@ marky-portfolio-2k26/
 │   │   │   ├── Reveal.tsx                 # Reusable viewport fade-up (16px -> 0, 60ms stagger)
 │   │   │   ├── MaskHeading.tsx            # Line-mask slide-up heading primitive
 │   │   │   └── HairlineRule.tsx           # 1px left-to-right scaleX divider
-│   │   ├── home/                          # HeroSplit, FeaturedProjectsRows, ExperienceLedger, etc.
+│   │   ├── home/
+│   │   │   └── FeaturedProjectsCarousel.tsx # 5-project Peek-a-Boo 2.5s auto-play vertical card carousel
 │   │   ├── projects/                      # CategoryTabs, ProjectShowcaseSpread, CaseStudyGalleryLightbox
 │   │   └── services/                      # ConsultationTierSelector, ModularBookingForm
 │   ├── data/                              # Zero-DB static typed source of truth

@@ -97,7 +97,12 @@ export const PROJECTS: ProjectItem[] = [
     ],
     featuredOnHome: true,
     homeOrder: 2,
+    homeTitle: "SK Logistics",
     homeTagline: "ENTERPRISE LOGISTICS ERP · 100+ ACTIVE USERS",
+    homeBullets: [
+      "ENTERPRISE LOGISTICS ERP",
+      "100+ ACTIVE USERS",
+    ],
   },
   {
     slug: "doze-beauty-lounge",
@@ -159,6 +164,10 @@ export const PROJECTS: ProjectItem[] = [
     featuredOnHome: true,
     homeOrder: 3,
     homeTagline: "AUTOMATED BOOKING & PACKAGE CMS",
+    homeBullets: [
+      "AUTOMATED BOOKING SYSTEM",
+      "DYNAMIC PACKAGE CMS",
+    ],
   },
   {
     slug: "kado-kohi",
@@ -212,6 +221,12 @@ export const PROJECTS: ProjectItem[] = [
       },
     ],
     liveUrl: "https://www.kadokohi.com/book/coffee-cart",
+    featuredOnHome: true,
+    homeOrder: 4,
+    homeBullets: [
+      "ONLINE ORDERING & FULFILLMENT",
+      "DUAL-BRANCH ADMIN PLATFORM",
+    ],
   },
   {
     slug: "off-grid-lifestyle-ph",
@@ -261,6 +276,12 @@ export const PROJECTS: ProjectItem[] = [
       },
     ],
     liveUrl: "https://oglifestyleph.com",
+    featuredOnHome: true,
+    homeOrder: 5,
+    homeBullets: [
+      "E-COMMERCE BRAND STOREFRONT",
+      "UI/UX & STOREFRONT OVERHAUL",
+    ],
   },
 
   /* =========================================================================
@@ -343,6 +364,10 @@ export const PROJECTS: ProjectItem[] = [
     featuredOnHome: true,
     homeOrder: 1,
     homeTagline: "LOCAL AI MEDIA PIPELINE · 🏆 TOP 2 HACKATHON",
+    homeBullets: [
+      "TOP 2 HACKATHON",
+      "LOCAL AI MEDIA PIPELINE",
+    ],
   },
   {
     slug: "ursac-hub",

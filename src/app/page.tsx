@@ -11,6 +11,7 @@ import { BrandLogo } from "@/components/ui/BrandLogo";
 import { TechIcon } from "@/components/ui/TechIcon";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ResumeTriggerButton } from "@/components/ui/ResumeTriggerButton";
+import { FeaturedProjectsCarousel } from "@/components/home/FeaturedProjectsCarousel";
 import { MaskHeading } from "@/components/motion/MaskHeading";
 import { Reveal } from "@/components/motion/Reveal";
 import { HairlineRule } from "@/components/motion/HairlineRule";
@@ -105,7 +106,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 02 / FEATURED PROJECTS (Top 3 Flagship Builds) */}
+      {/* 02 / FEATURED PROJECTS (5 Flagship Software Builds Carousel) */}
       <section aria-label="Featured projects" className="pb-16 lg:pb-24">
         <SectionHeader
           index="02"
@@ -114,60 +115,7 @@ export default function HomePage() {
           actionHref="/projects"
         />
 
-        <div className="divide-y divide-line border-b border-line">
-          {featuredProjects.map((project, idx) => (
-            <Reveal key={project.slug} delay={idx * 0.06}>
-              <Link
-                href={`/projects/${project.slug}`}
-                className="group grid grid-cols-1 items-center gap-6 py-7 transition-colors hover:bg-surface/60 lg:grid-cols-12 lg:gap-8 lg:px-3"
-              >
-                <div className="space-y-3 lg:col-span-7">
-                  <div className="flex items-baseline gap-4">
-                    <span className="font-mono text-xs text-fg-subtle">
-                      {String(idx + 1).padStart(2, "0")}
-                    </span>
-                    <h3 className="text-h2 font-medium tracking-tight text-fg">
-                      {project.title}
-                    </h3>
-                  </div>
-
-                  <p className="pl-8 font-mono text-xs uppercase tracking-wider text-fg-muted">
-                    {project.homeTagline ?? project.classification}
-                  </p>
-
-                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2 pl-8 pt-1">
-                    {project.techStack.slice(0, 5).map((tech) => (
-                      <span
-                        key={tech}
-                        className="inline-flex items-center gap-1.5 text-xs text-fg-muted"
-                      >
-                        <TechIcon name={tech} />
-                        <span>{tech}</span>
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 lg:col-span-5">
-                  <div className="relative aspect-video w-full overflow-hidden border border-line bg-surface">
-                    <Image
-                      src={project.coverImage}
-                      alt={`${project.title} project cover`}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 35vw"
-                      className="object-cover object-top grayscale transition-all duration-400 ease-out group-hover:grayscale-0"
-                    />
-                  </div>
-                  <ArrowUpRight
-                    size={18}
-                    aria-hidden="true"
-                    className="shrink-0 text-fg-subtle transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-fg"
-                  />
-                </div>
-              </Link>
-            </Reveal>
-          ))}
-        </div>
+        <FeaturedProjectsCarousel projects={featuredProjects} />
       </section>
 
       {/* 03 / EXPERIENCE (5-Row Hairline Ledger) */}

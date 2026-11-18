@@ -117,7 +117,7 @@
 * **Role:** Contributing Full-Stack Developer (UI/UX, frontend, and backend feature/bug work) alongside a partner developer | **Live:** [oglifestyleph.com](https://oglifestyleph.com)
 * **Tech Stack:** Next.js, Supabase, Tailwind CSS
 * **Contributions:** Improved UI/UX and frontend components; implemented features and fixed bugs across frontend and backend layers.
-* **Assets:** `assets/projects/real-projects/off-grid-lifestyle-ph/` *(pending screenshot capture — see folder `README.md`)*
+* **Assets:** `assets/projects/real-projects/off-grid-lifestyle-ph/` (`cover.png`, `01.png` – `03.png`)
 
 ---
 

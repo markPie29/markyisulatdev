@@ -97,7 +97,9 @@ export interface ProjectItem {
   repoUrl?: string;
   featuredOnHome?: boolean;
   homeOrder?: number;
+  homeTitle?: string;
   homeTagline?: string;
+  homeBullets?: [string, string];
   subSections?: ProjectSubSection[];
 }
 
