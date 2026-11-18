@@ -12,7 +12,7 @@
 |---|---|
 | **Archetype** | **Swiss / International Editorial** — strict 12-column grid, Helvetica Neue, hairline rules, numbered indices |
 | **Theme** | **Dark-first** (`#0A0A0A` canvas, `#EDEDED` ink) with a light mode toggle (`#F5F5F3` canvas) |
-| **Color & Imagery** | Strict monochrome UI. Hero portrait has its background removed and rendered in monochrome/grayscale; project images render in grayscale by default and transition to full color on hover (and full color on `/projects/:slug` case studies) |
+| **Color & Imagery** | Strict monochrome UI. Hero portrait has its background removed and rendered in monochrome/grayscale; project images render in grayscale at rest on desktop and transition to full color on hover (with full color by default on mobile viewports and `/projects/:slug` case studies) |
 | **Typography** | **Helvetica Neue** (Light, Roman, Medium, Bold) + **Monospace** (JetBrains Mono / Geist Mono) for indices, tags, and metadata |
 | **Headlines** | Sentence case, Medium/Bold weight, tight negative tracking (`-0.04em`), fluid `clamp()` sizing |
 | **Architecture** | **Hub & Deep-Dive (Multi-Page):** Quick-scroll Overview on `/` + 5 dedicated deep-dive pages (`/projects`, `/experience`, `/stack`, `/services`, `/testimonials`) + `/projects/:slug` case studies |
@@ -209,32 +209,30 @@ Have a software build, brand campaign, speaking invite, or capstone system to re
 
 ## 5. Page 02: `/projects` & `/projects/:slug` — Projects Showcase & Case Study
 
-### 5.1 `/projects` (Category Tabs at Top + Large Editorial Showcases Inside Each Tab)
+### 5.1 `/projects` (Category Tabs at Top + Scannable `6/6` Horizontal Showcases Inside Each Tab)
+- **Header & Tab Hygiene:** Keeps the intro paragraph below `Projects & Case Studies`, omits category description paragraphs below the tabs to reduce reading fatigue, and preserves `#real-users`, `#passion`, and `#multimedia` URL hash routing.
 - **3 Category Filter Tabs:**
   1. `[ 01 Real Users (Software) (4) ]` — SK Logistics, Doze Beauty Lounge, Kado Kohi, Off Grid Lifestyle PH
   2. `[ 02 Passion & Explorations (5) ]` — Snapsort, URSAC Hub (Marketplace & Social), AR-DUINO-M, The Glow Bar, Top Notch Constructions
   3. `[ 03 Multimedia & Brand Design (8) ]` — Hope for Angels, ACCESS Brand Identity, PureHubs Nutrition, Higher than Limits, College of Engineering, LVME Cafe, Bola Pickleball PH, Franchising PH
-- **Editorial Showcase Block (per project in the active tab):**
+- **Scannable `6 / 6` Showcase Card (per project in the active tab):**
+  - Uniform `6/6` horizontal split with identical `16:9` cover framing (`max-md:grayscale-0` full color on mobile, `md:grayscale` → `md:group-hover:grayscale-0` + subtle zoom on desktop). Award badges (e.g., Snapsort) render as a sharp top-left overlay pill with a Lucide `Trophy` icon (no emojis, no extra bottom strip).
+  - Right column surfaces only **Title**, **Role** mono subtitle, a single 1-sentence `shortDescription` (`8–13` words) directly above a single-row icon-only `<TechIcon />` stack (capped at `6` logos with hover tooltips + `+N` overflow indicator), and a uniform **`View Case Study →`** button (`Problem & Context`, `The Human & UX Touch`, and live URLs live inside `/projects/:slug`).
 ```
 ───────────────────────────────────────────────────────────────────────────────
-01 / REAL USERS                                         ENTERPRISE ERP · 2026
-┌─────────────────────────────────────────┬───────────────────────────────────┐
-│                                         │ SK Logistics Fleet Management     │
-│                                         │                                   │
-│          [16:9 COVER IMAGE]             │ Problem & Context:                │
-│      (Grayscale -> Color on Hover)      │ Unified fragmented dispatch,      │
-│                                         │ accounting, and garage ops for    │
-│                                         │ 100+ active enterprise users.     │
-│                                         │                                   │
-│                                         │ The Human & UX Touch:             │
-│                                         │ Translated dense multi-department │
-│                                         │ tables into error-tolerant forms. │
-│                                         │                                   │
-│                                         │ [r] React / [n] Next.js / Supabase│
-│                                         │                                   │
-│                                         │ [ Read Case Study → ]  Live ↗     │
-└─────────────────────────────────────────┴───────────────────────────────────┘
-  <--------------- 7 Cols -------------->   <------------ 5 Cols ----------->
+01 / REAL USERS / ENTERPRISE ERP       ENTERPRISE LOGISTICS ERP · 100+ USERS · 2026
+┌─────────────────────────────────────┬───────────────────────────────────────┐
+│ [🏆 Top-left Award Pill (optional)] │ SK Logistics Fleet Management System  │
+│                                     │ FULL-STACK DEVELOPER INTERN (...)     │
+│          [16:9 COVER IMAGE]         │                                       │
+│    (Color mobile · Gray->Color desk)│ Multi-role enterprise logistics ERP   │
+│                                     │ unifying dispatch, maint., & tracking.│
+│                                     │ ───────────────────────────────────── │
+│                                     │ [r] [n] [ex] [s] [tw] [pg]            │
+│                                     │ ───────────────────────────────────── │
+│                                     │ [ View Case Study → ]                 │
+└─────────────────────────────────────┴───────────────────────────────────────┘
+  <------------- 6 Cols ------------>   <-------------- 6 Cols -------------->
 ```
 
 ### 5.2 `/projects/:slug` (Sticky 4 / 8 Editorial Case Study)
@@ -453,7 +451,7 @@ marky-portfolio-2k26/
 │   │   ├── sitemap.ts                     # Auto-generated sitemap for all routes & case studies
 │   │   ├── robots.ts                      # SEO robots rules
 │   │   ├── projects/
-│   │   │   ├── page.tsx                   # 02 Projects (/projects) — 3 Category Tabs + Editorial Showcases
+│   │   │   ├── page.tsx                   # 02 Projects (/projects) — 3 Category Tabs + Scannable 6/6 Showcases
 │   │   │   └── [slug]/
 │   │   │       ├── page.tsx               # Sticky 4/8 Case Study page (generateStaticParams)
 │   │   │       └── opengraph-image.tsx    # Per-project dynamic OG card
@@ -483,7 +481,7 @@ marky-portfolio-2k26/
 │   │   └── ui/                            # BrandLogo, TechIcon, SectionHeader, ResumeTriggerButton
 │   ├── data/                              # Zero-DB static typed source of truth
 │   │   ├── profile.ts                     # Identity, thesis, KPIs, socials, 01–06 nav
-│   │   ├── projects.ts                    # Real Users (4), Passion (5), Multimedia (8)
+│   │   ├── projects.ts                    # Real Users (4), Passion (5), Multimedia (8) + shortDescription & case study copy
 │   │   ├── experience.ts                  # 5 Roles (Marked Media Founder -> AP Global) + Credentials
 │   │   ├── stack.ts                       # 3 Unfair Advantage Pillars + 5 Categorized Tool Matrices
 │   │   ├── testimonials.ts                # Hajie Alejandro, Humphrey Lacambra, Novy Marquez + proof links

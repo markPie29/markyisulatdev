@@ -12,7 +12,7 @@ Personal portfolio website for **Mark Angelo A. Isulat ("Marky")** — **Product
 ## Routes
 
 * `/` — `01 Overview`: Vertically centered Hero split (`Product-Oriented Full-Stack Developer.`) + portrait/KPIs, 5-project `FeaturedProjectsCarousel.tsx` with radial gray card sheen, Experience ledger (company name first, monochrome brand logo on right), Stack summary, `3×2` hover-invert `HomeServicesGrid.tsx` (`Services & Consultations`), Testimonials, and Closing CTA.
-* `/projects` & `/projects/[slug]` — `02 Projects`: Tabbed showcase across Real Users, Passion & Explorations, and Multimedia & Brand Design, plus sticky `4/8` case studies.
+* `/projects` & `/projects/[slug]` — `02 Projects`: Tabbed showcase across Real Users, Passion & Explorations, and Multimedia & Brand Design using scannable `6/6` horizontal cards (title, role subtitle, concise `shortDescription`, icon-only `<TechIcon />` logos with `+N` overflow, top-left `Trophy` award overlay, and uniform `View Case Study →` button), plus sticky `4/8` case studies (`Problem & Context`, `The Human & UX Touch`, galleries, and live links).
 * `/experience` — `03 Experience`: 5-role career ledger framed through The Engineer's Lens with theme-adaptive monochrome logos (`BrandLogo.tsx`), plus Education, Honors & Verified Certifications.
 * `/stack` — `04 Stack`: `01 — THE PRODUCT-ORIENTED EDGE` pillars and 5-category proof-backed technical tool matrix.
 * `/services` — `05 Services`: Core services, 3-tier consultation selector (`#business`, `#speaking`, `#thesis-capstone` hash anchors), and Zod-validated booking inquiry form.

@@ -42,6 +42,8 @@ export const PROJECTS: ProjectItem[] = [
     classification: "ENTERPRISE LOGISTICS ERP · 100+ ACTIVE USERS",
     year: "2026",
     role: "Full-Stack Developer Intern (Nexvision Innovations Inc.)",
+    shortDescription:
+      "Multi-role enterprise logistics ERP unifying dispatch, maintenance, accounting, and tracking.",
     summary:
       "Unified fragmented dispatch, garage maintenance, accounting, and executive tracking into a single multi-role enterprise platform serving 100+ active users.",
     problemContext:
@@ -113,6 +115,8 @@ export const PROJECTS: ProjectItem[] = [
     classification: "AUTOMATED BOOKING & PACKAGE CMS",
     year: "2026",
     role: "Full Stack Developer & UI/UX Designer",
+    shortDescription:
+      "Self-service salon booking platform with a live service and package CMS.",
     summary:
       "Production web application eliminating slow chat booking friction through self-service appointment scheduling, a dynamic services/package CMS, and an operations dashboard.",
     problemContext:
@@ -178,6 +182,8 @@ export const PROJECTS: ProjectItem[] = [
     classification: "ONLINE ORDERING, FULFILLMENT & ADMIN PLATFORM",
     year: "2026",
     role: "Co-Developer & UI/UX Designer (Collaborative Build)",
+    shortDescription:
+      "Dual-branch café storefront for drink ordering, fulfillment, and coffee cart bookings.",
     summary:
       "Collaborative full-stack café storefront across Marikina and Greenhills featuring online drink ordering, pick-up/delivery fulfillment, coffee cart reservations, and an admin portal.",
     problemContext:
@@ -237,6 +243,8 @@ export const PROJECTS: ProjectItem[] = [
     classification: "E-COMMERCE & OUTDOOR BRAND STOREFRONT",
     year: "2026",
     role: "Contributing Full-Stack Developer & Brand Designer",
+    shortDescription:
+      "Collaborative Next.js e-commerce storefront paired with outdoor apparel retail campaigns.",
     summary:
       "Ongoing collaborative Next.js and Supabase e-commerce improvements paired with social campaigns (+10% engagement) and pop-up retail strategy (+12% booth sales).",
     problemContext:
@@ -297,6 +305,8 @@ export const PROJECTS: ProjectItem[] = [
     year: "2026",
     role: "Frontend & UI/UX Engineer · Product Pitch Lead (Co-Creator)",
     awardBadge: "🏆 1st Runner-Up (Top 2 / 280+ Teams) — AppBuilders PH 2026",
+    shortDescription:
+      "Offline macOS desktop app indexing and searching 10,000+ local media files at 60fps.",
     summary:
       "100% local, zero-cloud desktop media intelligence application for macOS indexing, clustering, and searching 10,000+ photos and videos at 60fps.",
     problemContext:
@@ -378,6 +388,8 @@ export const PROJECTS: ProjectItem[] = [
     classification: "CAMPUS E-COMMERCE & STUDENT SOCIAL NETWORK",
     year: "2025",
     role: "Full Stack Developer & UI/UX Designer",
+    shortDescription:
+      "Dual-app campus platform uniting student org announcements, merch, and social feeds.",
     summary:
       "Centralized university ecosystem uniting an organization announcement & campus merchandise marketplace (Laravel + MySQL) with a verified campus social network (Laravel + Firebase).",
     problemContext:
@@ -520,6 +532,8 @@ export const PROJECTS: ProjectItem[] = [
     classification: "GAME DEV & AUGMENTED REALITY INTEGRATION",
     year: "2024",
     role: "UI/UX Designer & Product Designer",
+    shortDescription:
+      "Augmented reality Arduino circuit simulator mobile app and showcase website.",
     summary:
       "Augmented reality Arduino circuit simulation mobile app paired with a dedicated Next.js & Tailwind CSS product showcase website.",
     problemContext:
@@ -579,6 +593,8 @@ export const PROJECTS: ProjectItem[] = [
     classification: "CONCEPT & UI EXPLORATION · WELLNESS STUDIO",
     year: "2026",
     role: "UI/UX Designer & Frontend Developer",
+    shortDescription:
+      "Code-first wellness studio showcase featuring editorial typography and treatment menus.",
     summary:
       "Serene, code-first wellness studio web exploration pairing editorial typography with structured treatment packages and accessible shadcn/ui inquiry controls.",
     problemContext:
@@ -640,6 +656,8 @@ export const PROJECTS: ProjectItem[] = [
     classification: "CONCEPT & UI EXPLORATION · ARCHITECTURE & BUILD",
     year: "2026",
     role: "UI/UX Designer & Frontend Developer",
+    shortDescription:
+      "Industrial-modern contractor portfolio with categorized builds and quotation pathways.",
     summary:
       "Bold industrial-modern construction and architectural showcase built with Next.js, TypeScript, Tailwind CSS, and Shadcn UI with structured quotation channels.",
     problemContext:
@@ -702,6 +720,8 @@ export const PROJECTS: ProjectItem[] = [
     classification: "ANIMAL SHELTER REBRAND & MERCHANDISE",
     year: "2024",
     role: "Graphic Designer",
+    shortDescription:
+      "Animal shelter rebrand, visual brandbook, and three fundraising shirt concepts.",
     summary:
       "Full brand refresh for Leah Borbon's Hope for Angels animal rescue shelter, delivering a warm logo system, visual brandbook, and three fundraising merchandise shirt concepts.",
     problemContext:
@@ -752,6 +772,8 @@ export const PROJECTS: ProjectItem[] = [
     classification: "ORGANIZATION IDENTITY, PUBMATS & COURSE SHIRT",
     year: "2024",
     role: "Lead Graphic Designer",
+    shortDescription:
+      "Student org visual identity, event pubmats, and signature Computer Engineering shirt.",
     summary:
       "Complete organization identity, social publication materials, and signature Computer Engineering course shirt worn across URS Antipolo campus.",
     problemContext:
@@ -815,6 +837,8 @@ export const PROJECTS: ProjectItem[] = [
     classification: "SUPPLEMENT PACKAGING & FACEBOOK ADS",
     year: "2024",
     role: "Graphic Designer",
+    shortDescription:
+      "Multi-SKU supplement label architecture paired with performance Facebook ad creatives.",
     summary:
       "Product label architecture and social advertising suite establishing a clean, modern nutrition and wellness shelf presence across print and Facebook ads.",
     problemContext:
@@ -877,6 +901,8 @@ export const PROJECTS: ProjectItem[] = [
     classification: "CULTURAL STREETWEAR & APPAREL DESIGN",
     year: "2024",
     role: "Graphic Designer",
+    shortDescription:
+      "Cultural streetwear apparel illustrations celebrating Tuguegarao heritage from founder sketches.",
     summary:
       "Bespoke apparel illustrations celebrating Tuguegarao culture, translating founder Humphrey Lacambra's rough sketches directly into print-ready streetwear drops.",
     problemContext:
@@ -923,6 +949,8 @@ export const PROJECTS: ProjectItem[] = [
     classification: "STUDENT COUNCIL APPAREL & ESPORTS PUBMATS",
     year: "2025",
     role: "Graphic Designer",
+    shortDescription:
+      "Official varsity and libero jerseys, pageant visuals, and collegiate esports graphics.",
     summary:
       "Official varsity and libero jerseys, pageant collateral, and collegiate esports tournament graphics produced for the URSAC College of Engineering Student Council.",
     problemContext:
@@ -981,6 +1009,8 @@ export const PROJECTS: ProjectItem[] = [
     classification: "CAFE IDENTITY SYSTEM & PACKAGING",
     year: "2024",
     role: "Graphic Designer",
+    shortDescription:
+      "Minimalist logotype, typographic identity, and takeaway packaging for a specialty café.",
     summary:
       "Minimalist logo system, typographic visual identity, and beverage cup/packaging collateral designed in collaboration with a co-designer for a specialty café.",
     problemContext:
@@ -1038,6 +1068,8 @@ export const PROJECTS: ProjectItem[] = [
     classification: "SPORTS BRAND PUBMATS & SOCIAL COLLATERAL",
     year: "2024",
     role: "Graphic Designer (Marketing Hive)",
+    shortDescription:
+      "High-energy sports publication materials and social campaign graphics for pickleball.",
     summary:
       "Energetic sports-driven publication materials and social campaign graphics created under Marketing Hive for a premier Philippine pickleball community and court brand.",
     problemContext:
@@ -1092,6 +1124,8 @@ export const PROJECTS: ProjectItem[] = [
     classification: "CORPORATE SOCIAL ASSETS & PUBMATS",
     year: "2024",
     role: "Graphic Designer (Marketing Hive)",
+    shortDescription:
+      "Corporate B2B social media assets and informational carousel pubmats for franchise consultancy.",
     summary:
       "Clean, authoritative corporate social media assets and informational carousel pubmats built under Marketing Hive for Philippine franchise consultancy campaigns.",
     problemContext:

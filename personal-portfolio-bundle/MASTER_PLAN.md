@@ -99,7 +99,7 @@ Unified reverse-chronological timeline framed through **The Engineer's Lens**:
   * 5-project Peek-a-Boo `FeaturedProjectsCarousel` with subtle monochrome radial gray surface sheen.
   * 5-role Work Experience ledger (company name followed by theme-adaptive monochrome logo via `BrandLogo.tsx`, including `nexvision-innovations-mono.png` and `ap-global-mono.png`).
   * `3×2` Swiss hairline `HomeServicesGrid` (top row Services, bottom row Consultations; giant faded icons at rest with inverted hover/focus reveal linking to `/services#<id>`).
-  * Dual-plus-multimedia project tabs (`Real Users`, `Passion & Explorations`, `Multimedia & Brand Design`), sticky `4/8` case studies, full `4/8` Experience + Credentials ledger, contextual Stack matrix, Services + `#consultations` + `#booking` flow, and Client Testimonials.
+  * Dual-plus-multimedia project tabs (`Real Users`, `Passion & Explorations`, `Multimedia & Brand Design`) on `/projects` using scannable `6/6` horizontal cards (title, role subtitle, 1-sentence `shortDescription`, icon-only `<TechIcon />` stack row with `+N` overflow, top-left `Trophy` award overlay, and uniform `View Case Study →` button), sticky `4/8` case studies (`/projects/[slug]` housing full `Problem & Context`, `The Human & UX Touch`, and live links), full `4/8` Experience + Credentials ledger, contextual Stack matrix, Services + `#consultations` + `#booking` flow, and Client Testimonials.
 
 ### Phase 3: Transform `react-portfolio-2k26` into Marked Media Official Site
 * Rebrand navigation, hero, and metadata from "Mark Angelo Isulat" to **Marked Media**.

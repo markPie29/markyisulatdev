@@ -84,6 +84,7 @@ export interface ProjectItem {
   year: string;
   role: string;
   awardBadge?: string;
+  shortDescription: string;
   summary: string;
   problemContext: string;
   architectureHighlights: string[];
