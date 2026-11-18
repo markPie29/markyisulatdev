@@ -1,11 +1,11 @@
 # MARK ANGELO A. ISULAT
-**Design Engineer • Product-Minded Full-Stack Developer**  
+**Full-Stack Developer • Product-Oriented Developer**  
 Antipolo City, Philippines | 0948-679-3481 | markyisulat@gmail.com | [markyisulat.dev](https://markyisulat.dev) | [github.com/markPie29](https://github.com/markPie29)
 
 ---
 
 ## PROFESSIONAL SUMMARY
-**1st Runner-Up — AppBuilders PH Hackathon 2026 (Top 2 out of 280+ Submissions)**, **DOST-SEI Scholar (R.A. 7687)**, and **Product-Minded Full-Stack Developer** focused on building systems that help real users. Combining frontend and UI/UX engineering across **React 19, Next.js, Electron, TypeScript, Tailwind CSS v4, Express.js, and Supabase/PostgreSQL** with practical experience in **graphic design and digital/physical marketing**, I compose clean, user-friendly interfaces directly in code—removing operational friction across enterprise ERPs, automated booking platforms, and e-commerce storefronts.
+**1st Runner-Up — AppBuilders PH Hackathon 2026 (Top 2 out of 280+ Submissions)**, **DOST-SEI Scholar (R.A. 7687)**, and **Product-Oriented Full-Stack Developer** focused on building systems that help real users. Combining frontend and UI/UX engineering across **React 19, Next.js, Electron, TypeScript, Tailwind CSS v4, Express.js, and Supabase/PostgreSQL** with practical experience in **graphic design and digital/physical marketing**, I compose clean, user-friendly interfaces directly in code—removing operational friction across enterprise ERPs, automated booking platforms, and e-commerce storefronts.
 
 ---
 

@@ -13,7 +13,7 @@ personal-portfolio-bundle/
 ├── MASTER_PLAN.md                               # Strategic brand positioning & separation blueprint
 ├── SOFTWARE_PORTFOLIO_DATA.md                   # Complete all-in-one software dossier (single source of truth)
 ├── docs/                                        # Modular content & component specs
-│   ├── 01-profile-and-narrative.md              # Bio, Design Engineer positioning, thesis & contact links
+│   ├── 01-profile-and-narrative.md              # Bio, Product-Oriented Full-Stack Developer positioning, thesis & contact links
 │   ├── 02-work-experience.md                    # 5-role timeline (Marked Media Founder, Off Grid, Nexvision, Marketing Hive, AP Global)
 │   ├── 03-projects-real-users.md                # Category 1: Real Projects with Actual Users (SK Logistics, Doze, Kado Kohi, Off Grid)
 │   ├── 04-projects-passion-explorations.md      # Category 2: Passion Projects & Explorations (Snapsort, URSAC Hub, AR-DUINO-M, Glow Bar, Top Notch)

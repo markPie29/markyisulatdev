@@ -112,7 +112,7 @@ export const CONSULTATION_TIERS: ConsultationTier[] = [
     priceLabel: "FREE",
     durationLabel: "KEYNOTE / PANEL / WORKSHOP",
     description:
-      "Available pro-bono for university student orgs, charity initiatives, and community tech events covering software engineering, Design Engineering, UI/UX, and real-world marketing.",
+      "Available pro-bono for university student orgs, charity initiatives, and community tech events covering full-stack software engineering, product-oriented development, UI/UX, and real-world marketing.",
     highlights: [
       "Practical talks on shipping full-stack & AI software as a student",
       "Code-first UI/UX engineering and hackathon pitching insights",

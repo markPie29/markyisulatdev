@@ -55,6 +55,11 @@ const helveticaNeue = localFont({
   variable: "--font-helvetica-neue",
   display: "swap",
   fallback: ["Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
+  declarations: [
+    { prop: "ascent-override", value: "90%" },
+    { prop: "descent-override", value: "25%" },
+    { prop: "line-gap-override", value: "0%" },
+  ],
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -67,15 +72,15 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://markyisulat.dev"),
   title: {
-    default: "Marky Isulat — Design Engineer & Full-Stack Developer",
+    default: "Marky Isulat — Product-Oriented Full-Stack Developer",
     template: "%s — Marky Isulat",
   },
   description:
-    "Mark Angelo A. Isulat (Marky) — Design Engineer and Product-Minded Full-Stack Developer building enterprise ERPs, automated booking platforms, and local AI systems that help actual users.",
+    "Mark Angelo A. Isulat (Marky) — Product-Oriented Full-Stack Developer building enterprise ERPs, automated booking platforms, and local AI systems that help actual users.",
   keywords: [
     "Marky Isulat",
     "Mark Angelo Isulat",
-    "Design Engineer",
+    "Product-Oriented Developer",
     "Full-Stack Developer",
     "Next.js",
     "React 19",
@@ -96,13 +101,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://markyisulat.dev",
     siteName: "Marky Isulat",
-    title: "Marky Isulat — Design Engineer & Full-Stack Developer",
+    title: "Marky Isulat — Product-Oriented Full-Stack Developer",
     description:
       "I don't just build systems; I build systems that help actual users.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Marky Isulat — Design Engineer & Full-Stack Developer",
+    title: "Marky Isulat — Product-Oriented Full-Stack Developer",
     description:
       "I don't just build systems; I build systems that help actual users.",
   },

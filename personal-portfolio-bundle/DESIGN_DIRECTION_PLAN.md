@@ -1,7 +1,7 @@
 # Personal Portfolio 2K26 — Master Design Direction, Per-Page Layouts & Tech Stack Blueprint (v6)
 
 > **Source of Truth Context:** Synced with [`MASTER_PLAN.md`](./MASTER_PLAN.md), [`SOFTWARE_PORTFOLIO_DATA.md`](./SOFTWARE_PORTFOLIO_DATA.md), [`docs/`](./docs/), and [`assets/personal/hero-portrait-raw.jpg`](./assets/personal/hero-portrait-raw.jpg) inside `personal-portfolio-bundle/`.
-> **Positioning:** Mark Angelo A. Isulat ("Marky") — **Design Engineer / Product-Minded Full-Stack Developer**
+> **Positioning:** Mark Angelo A. Isulat ("Marky") — **Full-Stack Developer / Product-Oriented Full-Stack Developer**
 > **Core Thesis:** *"I don't just build systems; I build systems that help actual users."*
 
 ---
@@ -37,12 +37,14 @@
 | `--invert-bg / --invert-fg` | `#EDEDED / #0A0A0A` | `#0A0A0A / #F5F5F3` | Primary CTA fill & text |
 
 ### Fluid Type Scale
+> **Font Metric Note:** `next/font/local` applies `@font-face` metric overrides (`ascent-override: 90%`, `descent-override: 25%`, `line-gap-override: 0%`) to `HelveticaNeue*.otf`, and `MaskHeading` / `LoadingScreen` include `pb-[0.14em] -mb-[0.14em]` clearance so descenders (`y`, `g`, `p`, `q`, `j`) are never clipped.
+
 | Role | Size | Weight | Tracking | Line Height |
 |---|---|---|---|---|
-| **Display XL (Hero Name)** | `clamp(3.25rem, 9vw, 8.5rem)` | 500 (Medium) | `-0.045em` | `0.92` |
-| **Display (Page Titles)** | `clamp(2.5rem, 6vw, 5.5rem)` | 500 (Medium) | `-0.04em` | `0.95` |
-| **H2 (Section Headers)** | `clamp(1.75rem, 3.2vw, 2.75rem)` | 500 (Medium) | `-0.03em` | `1.05` |
-| **H3 (Row / Item Titles)** | `clamp(1.125rem, 1.6vw, 1.5rem)` | 500 (Medium) | `-0.02em` | `1.2` |
+| **Display XL (Hero Name)** | `clamp(3.25rem, 9vw, 8.5rem)` | 500 (Medium) | `-0.045em` | `1.04` |
+| **Display (Page Titles)** | `clamp(2.5rem, 6vw, 5.5rem)` | 500 (Medium) | `-0.04em` | `1.08` |
+| **H2 (Section Headers)** | `clamp(1.75rem, 3.2vw, 2.75rem)` | 500 (Medium) | `-0.03em` | `1.15` |
+| **H3 (Row / Item Titles)** | `clamp(1.125rem, 1.6vw, 1.5rem)` | 500 (Medium) | `-0.02em` | `1.25` |
 | **Body** | `1rem` (`16px`) | 400 (Roman) | `0` | `1.6` (max `65ch`) |
 | **Small / Compact Row** | `0.875rem` (`14px`) | 400 (Roman) | `0` | `1.5` |
 | **Mono Index / Tag** | `0.75rem` (`12px`) | 400 | `+0.04em` (UPPER) | `1.4` |
@@ -66,7 +68,7 @@ flowchart LR
 ### Fixed Left Sidebar (`≥1024px`, ~260px wide)
 ```
 Marky Isulat                ← Links to / (Home)
-Design Engineer             ← Subtitle (--fg-muted)
+Full-Stack Developer        ← Subtitle (--fg-muted)
 
 01  Overview                ← /
 02  Projects                ← /projects (also active on /projects/:slug)
@@ -76,7 +78,7 @@ Design Engineer             ← Subtitle (--fg-muted)
 06  Services                ← /services
 
 ● Available for work        ← Mono status
-GH / LI / FB / DC           ← Social links (with small icons)
+[GH]     [LI]     [FB]     [DC] ← Icon-only social links (`justify-between`, no border/box, no text)
 [ Book a consultation ↗ ]   ← Inverted solid CTA → /services#consultations
 Resume ↗ · ☾/☀ · PHT Time   ← Resume modal/download, theme toggle, live clock
 ```
@@ -85,19 +87,20 @@ Resume ↗ · ☾/☀ · PHT Time   ← Resume modal/download, theme toggle, liv
 
 ## 4. Page 01: Home (`/`) — Executive Sneak-Peek Layout
 
-### 4.1 Hero Section (Asymmetric 7 / 5 Split + 2-Column KPI Below Portrait)
+### 4.1 Hero Section (Asymmetric 7 / 5 Split + Vertically Centered Left Stack + 2-Column KPI Below Portrait)
 ```
 ┌───────────────────────────────────────────────┬─────────────────────────────┐
-│                                               │                             │
-│ Marky                                         │    [CUTOUT B&W PORTRAIT]    │
-│ Isulat                                        │    (hero-portrait-raw.jpg   │
-│                                               │     with bg removed +       │
-│ Design Engineer & Full-Stack Developer.       │     monochrome/grayscale    │
-│ "I don't just build systems; I build          │     treatment)              │
-│  systems that help actual users."             │                             │
-│                                               ├──────────────┬──────────────┤
-│ [ Book a consultation ↗ ]   Resume ↗          │ 4yrs+        │ 20+          │
+│  (Vertically centered along portrait midline) │                             │
+│  01 / OVERVIEW · ANTIPOLO CITY, PHILIPPINES   │    [CUTOUT B&W PORTRAIT]    │
+│                                               │    (hero-portrait-raw.jpg   │
+│  Marky                                        │     with bg removed +       │
+│  Isulat                                       │     monochrome/grayscale    │
+│                                               │     treatment)              │
+│  Product-Oriented Full-Stack Developer.       │                             │
+│  "I don't just build systems; I build         ├──────────────┬──────────────┤
+│   systems that help actual users."            │ 4yrs+        │ 20+          │
 │                                               │ shipping     │ clients      │
+│  [ Book a consultation ↗ ]   Resume ↗         │              │              │
 └───────────────────────────────────────────────┴──────────────┴──────────────┘
   <------------------ 7 Cols ----------------->   <--------- 5 Cols -------->
 ```
@@ -300,7 +303,7 @@ Ordered: **01 Marked Media (Founder)** → **02 Off Grid Lifestyle PH** → **03
 
 ## 7. Page 04: `/stack` — Complete Tech & Design Stack
 
-### 7.1 Top Block: The 3 "Unfair Advantage" Pillars (3-Column Hairline Grid)
+### 7.1 Top Block: `01 — THE PRODUCT-ORIENTED EDGE` (3-Column Hairline Grid)
 ```
 ┌─────────────────────────┬─────────────────────────┬─────────────────────────┐
 │ 01 / CODE-FIRST UI      │ 02 / FRONTEND-FIRST     │ 03 / USER & MARKETING   │

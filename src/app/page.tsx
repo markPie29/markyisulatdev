@@ -24,7 +24,7 @@ export default function HomePage() {
       <section aria-label="Introduction" className="pb-16 lg:pb-24">
         <div className="grid grid-cols-1 gap-8 border-b border-line pb-12 lg:grid-cols-12 lg:gap-10">
           {/* Left 7 Columns: Name, Positioning, Thesis & Actions */}
-          <div className="flex flex-col justify-between lg:col-span-7">
+          <div className="flex flex-col justify-center lg:col-span-7">
             <div className="space-y-6">
               <Reveal immediate>
                 <div className="flex flex-wrap items-center gap-3 font-mono text-xs uppercase tracking-wider text-fg-subtle">
@@ -62,7 +62,7 @@ export default function HomePage() {
               </Reveal>
             </div>
 
-            <Reveal immediate delay={0.2} className="mt-10 flex flex-wrap items-center gap-3">
+            <Reveal immediate delay={0.2} className="mt-8 flex flex-wrap items-center gap-3">
               <Link
                 href="/services#consultations"
                 className="inline-flex items-center gap-2 bg-invert-bg px-6 py-3 text-sm font-medium tracking-tight text-invert-fg transition-opacity hover:opacity-90"

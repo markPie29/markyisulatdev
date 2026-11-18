@@ -152,14 +152,14 @@ export function LoadingScreen() {
           <p className="text-mono-label mb-3 text-fg-subtle">
             SWISS EDITORIAL PORTFOLIO · 2026
           </p>
-          <div className="overflow-hidden">
+          <div className="overflow-hidden pb-[0.14em] -mb-[0.14em]">
             <motion.p
               initial={{ y: "100%", opacity: 0 }}
               animate={{ y: "0%", opacity: 1 }}
               transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
               className="text-display font-medium tracking-tight text-fg"
             >
-              Marky Isulat — Design Engineer
+              Marky Isulat — Full-Stack Developer
             </motion.p>
           </div>
         </div>

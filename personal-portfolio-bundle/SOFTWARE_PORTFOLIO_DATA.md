@@ -1,20 +1,20 @@
 # Mark Angelo A. Isulat — Software Portfolio Master Dossier
 
-> **Single Source of Truth:** Complete software engineering profile, Design Engineer narrative, 5-role work experience timeline, dual-category software projects, technical skills matrix, credentials, and bundled asset paths for building the new personal developer portfolio.
+> **Single Source of Truth:** Complete software engineering profile, Product-Oriented Full-Stack Developer narrative, 5-role work experience timeline, dual-category software projects, technical skills matrix, credentials, and bundled asset paths for building the new personal developer portfolio.
 
 ---
 
 ## 1. Profile & Positioning
 
 * **Full Name:** Mark Angelo A. Isulat ("Marky")
-* **Core Positioning:** **Design Engineer / Product-Minded Full-Stack Developer**
+* **Core Positioning:** **Full-Stack Developer / Product-Oriented Full-Stack Developer**
 * **Primary Thesis:** *"I don't just build systems; I build systems that help actual users."*
 * **Location:** Antipolo City, Philippines
 * **Email:** `markyisulat@gmail.com` | **Phone:** `0948-679-3481`
 * **Links:** [markyisulat.dev](https://markyisulat.dev) · [github.com/markPie29](https://github.com/markPie29) · [LinkedIn](https://www.linkedin.com/in/mark-angelo-isulat-1954a2335/) · [Discord](https://discordapp.com/users/399221201383325706) · [Facebook](https://facebook.com/markPie29)
 
 ### Executive Bio
-**1st Runner-Up — AppBuilders PH Hackathon 2026 (Top 2 out of 280+ Submissions)**, **DOST-SEI S&T Undergraduate Scholar (R.A. 7687)**, and **Product-Minded Full-Stack Developer** with hands-on experience engineering enterprise logistics ERPs, automated client booking platforms, e-commerce storefronts, and desktop applications. Currently a 4th-year BS Computer Engineering student at the University of Rizal System – Antipolo Campus, combining frontend and UI/UX engineering with real-world graphic design and digital/physical marketing experience.
+**1st Runner-Up — AppBuilders PH Hackathon 2026 (Top 2 out of 280+ Submissions)**, **DOST-SEI S&T Undergraduate Scholar (R.A. 7687)**, and **Product-Oriented Full-Stack Developer** with hands-on experience engineering enterprise logistics ERPs, automated client booking platforms, e-commerce storefronts, and desktop applications. Currently a 4th-year BS Computer Engineering student at the University of Rizal System – Antipolo Campus, combining frontend and UI/UX engineering with real-world graphic design and digital/physical marketing experience.
 
 ### The "Unfair Advantage" (Why Design & Marketing Make Better Software)
 1. **Code-First Design & Rapid UI Engineering:** Rather than getting stuck in static Figma mockups, I compose production-ready interfaces directly in code (**React 19, Next.js, Tailwind CSS v4**). Graphic design instincts and visual hierarchy intuition keep interfaces clean, responsive, and intuitive on the first pass.

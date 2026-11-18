@@ -3,7 +3,7 @@
 ## Contact & Professional Links
 
 * **Full Name:** Mark Angelo A. Isulat ("Marky")
-* **Title / Archetype:** **Design Engineer / Product-Minded Full-Stack Developer**
+* **Title / Archetype:** **Full-Stack Developer / Product-Oriented Full-Stack Developer**
 * **Location:** Antipolo City, Philippines
 * **Email:** `markyisulat@gmail.com`
 * **Phone:** `0948-679-3481`

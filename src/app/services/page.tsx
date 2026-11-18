@@ -29,9 +29,9 @@ export default function ServicesPage() {
         </MaskHeading>
         <Reveal immediate delay={0.1}>
           <p className="mt-4 max-w-[65ch] text-base leading-relaxed text-fg-muted">
-            Partner directly with a Design Engineer across production software
-            systems, visual identity architecture, and structured technical
-            consultations.
+            Partner directly with a Product-Oriented Full-Stack Developer across
+            production software systems, visual identity architecture, and
+            structured technical consultations.
           </p>
         </Reveal>
       </header>

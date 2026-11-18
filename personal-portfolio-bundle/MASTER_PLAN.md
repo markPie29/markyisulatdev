@@ -1,7 +1,7 @@
 # Strategic Blueprint: Personal Developer Portfolio & Marked Media Separation
 
 > [!IMPORTANT]
-> **Plan Objective:** Establish a clean, permanent separation between your **Personal Developer Portfolio** (focusing strictly on software engineering through a human-centric Design Engineer lens) and the **Official Marked Media Website** (transitioning `react-portfolio-2k26` into an agency and creative studio platform).
+> **Plan Objective:** Establish a clean, permanent separation between your **Personal Developer Portfolio** (focusing strictly on software engineering through a human-centric, product-oriented Full-Stack Developer lens) and the **Official Marked Media Website** (transitioning `react-portfolio-2k26` into an agency and creative studio platform).
 
 ---
 
@@ -14,7 +14,7 @@ flowchart TD
     
     Current --> Split
     
-    Split -->|"Export Bundle: personal-portfolio-bundle/"| Dev["New Project: Personal Developer Portfolio\n• Role: Design Engineer / Product-Minded Full-Stack Dev\n• Theme: Systems Built for Real Humans\n• Source: SOFTWARE_PORTFOLIO_DATA.md & docs/\n• Cat 1: Real Projects with Actual Users\n• Cat 2: Passion Projects & Technical Explorations\n• Full Work Experience (5 Roles with Engineer's Lens)"]
+    Split -->|"Export Bundle: personal-portfolio-bundle/"| Dev["New Project: Personal Developer Portfolio\n• Role: Full-Stack Developer / Product-Oriented Full-Stack Dev\n• Theme: Systems Built for Real Humans\n• Source: SOFTWARE_PORTFOLIO_DATA.md & docs/\n• Cat 1: Real Projects with Actual Users\n• Cat 2: Passion Projects & Technical Explorations\n• Full Work Experience (5 Roles with Engineer's Lens)"]
     
     Split -->|"Refactor & Rebrand Current Repo"| Agency["Current Repo: Marked Media Official Site\n• Creative & Technology Agency\n• Services: Graphic Design, Web Dev, SMM, Video\n• Client Case Studies & Brand Work\n• Agency Inquiry System"]
 ```
@@ -24,7 +24,7 @@ flowchart TD
 ## 2. Professional Identity & Narrative Hook
 
 ### Core Positioning
-* **Title / Archetype:** **Design Engineer / Product-Minded Full-Stack Developer**
+* **Title / Archetype:** **Full-Stack Developer / Product-Oriented Full-Stack Developer**
 * **Primary Thesis:** *"I don't just build systems; I build systems that help actual users."*
 
 ### The "Unfair Advantage" (The Human-Centered Bridge)
@@ -95,7 +95,7 @@ Unified reverse-chronological timeline framed through **The Engineer's Lens**:
 * Spin up your dedicated Personal Developer Portfolio codebase.
 * Copy `personal-portfolio-bundle/assets/` into the new repo's `public/` directory.
 * Ingest `SOFTWARE_PORTFOLIO_DATA.md` and `docs/` to build out:
-  * Hero section focused on **Design Engineer** positioning (*"I don't just build systems; I build systems that help actual users"*).
+  * Hero section focused on **Product-Oriented Full-Stack Developer** positioning (*"I don't just build systems; I build systems that help actual users"*).
   * Dual project tabs: **Real Projects with Actual Users** & **Passion Projects & Technical Explorations**.
   * Project case study drawers/modals highlighting **"The Human & UX Touch"**.
   * Unified 5-role Work Experience timeline with **"The Engineer's Lens"**.

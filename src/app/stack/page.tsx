@@ -38,7 +38,7 @@ export default function StackPage() {
       <section className="mb-16" aria-label="Core engineering differentiation">
         <SectionHeader
           index="01"
-          title="THE DESIGN ENGINEER EDGE"
+          title="THE PRODUCT-ORIENTED EDGE"
           className="mb-6"
         />
 

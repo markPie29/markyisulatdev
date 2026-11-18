@@ -32,7 +32,7 @@ export function MaskHeading({
   }
 
   return (
-    <Tag className={cn("overflow-hidden", className)}>
+    <Tag className={cn("overflow-hidden pb-[0.14em] -mb-[0.14em]", className)}>
       {immediate ? (
         <motion.span
           className="block"

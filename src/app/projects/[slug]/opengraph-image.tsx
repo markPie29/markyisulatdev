@@ -32,7 +32,7 @@ export default async function Image({
   const year = project?.year ?? "2026";
   const title = project?.title ?? "Selected Engineering Case Study";
   const classification = project?.classification ?? "System Architecture";
-  const role = project?.role ?? "Design Engineer";
+  const role = project?.role ?? "Full-Stack Developer";
   const summary = truncateText(
     project?.summary ??
       "Production software, interface engineering, and visual brand systems built around real user workflows.",
@@ -189,7 +189,7 @@ export default async function Image({
               color: "#FAFAFA",
             }}
           >
-            MARKY ISULAT — DESIGN ENGINEER
+            MARKY ISULAT — FULL-STACK DEVELOPER
           </span>
         </div>
       </div>

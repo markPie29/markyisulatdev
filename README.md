@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Marky Isulat — Personal Portfolio 2K26
 
-## Getting Started
+Personal portfolio website for **Mark Angelo A. Isulat ("Marky")** — **Product-Oriented Full-Stack Developer** (*"I don't just build systems; I build systems that help actual users."*).
 
-First, run the development server:
+## Architecture & Visual System
+
+* **Archetype:** Swiss / International Editorial — strict 12-column grid, `0px` border radius, hairline borders, numbered indices, and dark-first monochrome theming (`next-themes` with light mode toggle).
+* **Framework:** Next.js 16 (App Router) + React 19 + TypeScript + Tailwind CSS v4 + `motion/react` + Radix UI (`Tabs`, `Dialog`) + React Hook Form & Zod.
+* **Typography & Font Metrics:** Local `HelveticaNeue` (`.otf`/`.ttf`) via `next/font/local` with `@font-face` metric overrides (`ascent-override: 90%`, `descent-override: 25%`, `line-gap-override: 0%`) paired with `JetBrains Mono` (`next/font/google`). Fluid display scale in `src/app/globals.css` and masked heading wrappers (`MaskHeading.tsx`, `LoadingScreen.tsx`) provide descender clearance so glyphs (`y`, `g`, `p`, `q`, `j`) are never clipped.
+* **Persistent Navigation:** Fixed `260px` desktop sidebar (`SidebarShell.tsx` + `LineSidebar.tsx`) with `Full-Stack Developer` subtitle, cursor-proximity numbered routes (`01`–`06`), icon-only borderless social links (`NavUtilities.tsx`), consultation CTA, resume modal trigger, theme switcher, and Manila (`PHT`) clock; collapses to `MobileTopBar.tsx` under `1024px`.
+
+## Routes
+
+* `/` — `01 Overview`: Vertically centered Hero split (`Product-Oriented Full-Stack Developer.`) + portrait/KPIs, Featured Projects, Experience ledger, Stack summary, Testimonials, Services & Consultations, and Closing CTA.
+* `/projects` & `/projects/[slug]` — `02 Projects`: Tabbed showcase across Real Users, Passion & Explorations, and Multimedia & Brand Design, plus sticky `4/8` case studies.
+* `/experience` — `03 Experience`: 5-role career ledger framed through The Engineer's Lens, plus Education, Honors & Verified Certifications.
+* `/stack` — `04 Stack`: `01 — THE PRODUCT-ORIENTED EDGE` pillars and 5-category proof-backed technical tool matrix.
+* `/testimonials` — `05 Testimonials`: Verified client perspectives paired with case-study previews.
+* `/services` — `06 Services`: Core services, 3-tier consultation selector, and Zod-validated booking inquiry form.
+
+## Source-of-Truth Documentation
+
+* [`personal-portfolio-bundle/DESIGN_DIRECTION_PLAN.md`](./personal-portfolio-bundle/DESIGN_DIRECTION_PLAN.md) — Complete UI, layout, typography, and architecture blueprint.
+* [`personal-portfolio-bundle/MASTER_PLAN.md`](./personal-portfolio-bundle/MASTER_PLAN.md) — Brand positioning and portfolio separation strategy.
+* [`personal-portfolio-bundle/SOFTWARE_PORTFOLIO_DATA.md`](./personal-portfolio-bundle/SOFTWARE_PORTFOLIO_DATA.md) — Canonical profile, experience, projects, and credentials dossier.
+
+## Development Commands
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev     # Start local Next.js dev server
+npm run build   # Production build & static route generation
+npm run start   # Serve production build
+npm run lint    # Run ESLint
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

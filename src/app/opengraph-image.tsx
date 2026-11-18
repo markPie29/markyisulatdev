@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Marky Isulat — Design Engineer & Full-Stack Developer";
+export const alt = "Marky Isulat — Product-Oriented Full-Stack Developer";
 export const size = {
   width: 1200,
   height: 630,
@@ -71,7 +71,7 @@ export default function Image() {
               marginBottom: "18px",
             }}
           >
-            MARKY ISULAT — DESIGN ENGINEER
+            MARKY ISULAT — FULL-STACK DEVELOPER
           </span>
           <div
             style={{
@@ -138,7 +138,7 @@ export default function Image() {
               letterSpacing: "0.12em",
             }}
           >
-            DESIGN ENGINEER
+            FULL-STACK DEVELOPER
           </div>
         </div>
       </div>

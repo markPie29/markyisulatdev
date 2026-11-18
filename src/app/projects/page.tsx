@@ -7,7 +7,7 @@ import { Reveal } from "@/components/motion/Reveal";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "17 shipped software platforms, local AI desktop builds, campus systems, and multimedia brand identities crafted through a Design Engineer lens.",
+    "17 shipped software platforms, local AI desktop builds, campus systems, and multimedia brand identities crafted through a product-oriented engineering lens.",
 };
 
 export default function ProjectsPage() {

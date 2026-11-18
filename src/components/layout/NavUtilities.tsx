@@ -117,8 +117,8 @@ function LinkedInMark() {
   return (
     <svg
       viewBox="0 0 24 24"
-      width="12"
-      height="12"
+      width="16"
+      height="16"
       fill="currentColor"
       aria-hidden="true"
     >
@@ -130,24 +130,24 @@ function LinkedInMark() {
 function SocialGlyph({ id }: { id: SocialLink["id"] }) {
   switch (id) {
     case "github":
-      return <SiGithub size={12} aria-hidden="true" />;
+      return <SiGithub size={16} aria-hidden="true" />;
     case "linkedin":
       return <LinkedInMark />;
     case "facebook":
-      return <SiFacebook size={12} aria-hidden="true" />;
+      return <SiFacebook size={16} aria-hidden="true" />;
     case "discord":
-      return <SiDiscord size={12} aria-hidden="true" />;
+      return <SiDiscord size={16} aria-hidden="true" />;
   }
 }
 
 /**
- * Monochrome GH / LI / FB / DC social icon + code links strip.
+ * Monochrome GH / LI / FB / DC icon-only social links strip without borders or text labels.
  */
 export function SocialLinksRow({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "grid grid-cols-4 border-t border-l border-line",
+        "flex w-full items-center justify-between py-1",
         className,
       )}
     >
@@ -159,10 +159,9 @@ export function SocialLinksRow({ className }: { className?: string }) {
           rel="noopener noreferrer"
           aria-label={social.label}
           title={social.label}
-          className="inline-flex items-center justify-center gap-1.5 border-r border-b border-line py-2 font-mono text-[11px] uppercase tracking-wider text-fg-muted transition-colors hover:bg-surface hover:text-fg"
+          className="inline-flex items-center justify-center text-fg-muted transition-colors hover:text-fg focus-visible:outline focus-visible:outline-1 focus-visible:outline-fg"
         >
           <SocialGlyph id={social.id} />
-          <span>{social.code}</span>
         </a>
       ))}
     </div>
