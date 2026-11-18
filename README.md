@@ -7,7 +7,7 @@ Personal portfolio website for **Mark Angelo A. Isulat ("Marky")** — **Product
 * **Archetype:** Swiss / International Editorial — strict 12-column grid, `0px` border radius, hairline borders, numbered indices, and dark-first monochrome theming (`next-themes` with light mode toggle).
 * **Framework:** Next.js 16 (App Router) + React 19 + TypeScript + Tailwind CSS v4 + `motion/react` + Radix UI (`Tabs`, `Dialog`) + React Hook Form & Zod.
 * **Typography & Font Metrics:** Local `HelveticaNeue` (`.otf`/`.ttf`) via `next/font/local` with `@font-face` metric overrides (`ascent-override: 90%`, `descent-override: 25%`, `line-gap-override: 0%`) paired with `JetBrains Mono` (`next/font/google`). Fluid display scale in `src/app/globals.css` and masked heading wrappers (`MaskHeading.tsx`, `LoadingScreen.tsx`) provide descender clearance so glyphs (`y`, `g`, `p`, `q`, `j`) are never clipped.
-* **Persistent Navigation:** Fixed `260px` desktop sidebar (`SidebarShell.tsx` + `LineSidebar.tsx`) with `Full-Stack Developer` subtitle, cursor-proximity numbered routes (`01`–`06`), icon-only borderless social links (`NavUtilities.tsx`), consultation CTA, resume modal trigger, theme switcher, and Manila (`PHT`) clock; collapses to `MobileTopBar.tsx` under `1024px`.
+* **Persistent Navigation:** Fixed `260px` desktop sidebar (`SidebarShell.tsx` + `LineSidebar.tsx`) with `Full-Stack Developer` subtitle, cursor-proximity numbered routes (`01`–`07`), icon-only borderless social links (`NavUtilities.tsx`), consultation CTA, resume modal trigger, theme switcher, and Manila (`PHT`) clock; collapses to `MobileTopBar.tsx` under `1024px`.
 
 ## Routes
 
@@ -17,6 +17,7 @@ Personal portfolio website for **Mark Angelo A. Isulat ("Marky")** — **Product
 * `/stack` — `04 Stack`: `01 — THE PRODUCT-ORIENTED EDGE` pillars and 5-category proof-backed technical tool matrix.
 * `/services` — `05 Services`: Core services, 3-tier consultation selector (`#business`, `#speaking`, `#thesis-capstone` hash anchors), and Zod-validated booking inquiry form.
 * `/testimonials` — `06 Testimonials`: Verified client perspectives paired with case-study previews.
+* `/personal` — `07 Personal`: `Personal Life` standalone page featuring a 10-frame full-color infinite filmstrip photo reel (`PersonalArchiveSection.tsx`) with lightbox inspection, Services-style radial-gradient origin card, 10 title-only off-duty interests (`01 // OFF-DUTY INTERESTS`), and 4 hover-invert creator channel cards (`02 // CHANNELS`).
 
 ## Source-of-Truth Documentation
 

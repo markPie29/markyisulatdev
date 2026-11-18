@@ -41,7 +41,19 @@ Many full-stack developers build technically capable backends wrapped in confusi
 
 Located in [`../assets/personal/`](../assets/personal/):
 * `avatar.png` — Primary profile avatar
-* `about-me-hero.jpg` — Hero portrait photo
+* `about-me-hero.jpg` — Dual-monitor workspace photo (archived; not rendered on `/personal`)
 * `about-me-transition.mp4` — Interactive portrait transition video
+* `hero-portrait-raw.png` & `hero-portrait-cutout-bw.png` — Home hero studio portrait & monochrome cutout
 * `main-icon.svg` — Personal site SVG mark / favicon
-* `gallery/01.jpg` – `gallery/11.jpg` — 11 personal photos for About page visual stack
+* `gallery/` (`01.jpg`–`05.jpg`, `07.jpg`–`10.jpg`, `13.jpg`) — **10** active full-color frames rendered in the `/personal` filmstrip reel (`06.jpg`, `11.jpg`, and `12.jpg` excluded from live UI)
+
+---
+
+## Personal Life (`07 / Personal`)
+
+* **Off-Duty Interests:** `01` Basketball, `02` Volleyball, `03` Gym, `04` Gaming, `05` Content Creation, `06` DJing, `07` Cooking, `08` Café Hopping, `09` Movies & Shows, `10` Café Racer
+* **Creator & DJ Channels:**
+  * TikTok [`@_markpie29`](https://www.tiktok.com/@_markpie29) — `3,500+ Followers` · `262K+ Likes`
+  * TikTok [`@markdmedia`](https://www.tiktok.com/@markdmedia) — `1,200+ Followers` · `28.2K+ Likes`
+  * YouTube [`@djmarkpie`](https://www.youtube.com/@djmarkpie) — `2.19K+ Subscribers` · `568K+ Views`
+  * Instagram [`@marky_write`](https://www.instagram.com/marky_write/) — `200+ Followers` · `11 Posts`

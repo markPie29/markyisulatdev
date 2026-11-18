@@ -12,6 +12,7 @@ export interface CaseStudyLightboxProps {
   onClose: () => void;
   onSelectIndex: (index: number) => void;
   projectTitle: string;
+  hideDescription?: boolean;
 }
 
 /**
@@ -23,6 +24,7 @@ export function CaseStudyLightbox({
   onClose,
   onSelectIndex,
   projectTitle,
+  hideDescription = false,
 }: CaseStudyLightboxProps) {
   const isOpen = activeIndex !== null && images[activeIndex] !== undefined;
   const total = images.length;
@@ -63,7 +65,13 @@ export function CaseStudyLightbox({
               <Dialog.Title className="truncate text-sm font-medium tracking-tight text-fg">
                 {projectTitle}
               </Dialog.Title>
-              <Dialog.Description className="truncate font-mono text-xs uppercase tracking-wider text-fg-muted">
+              <Dialog.Description
+                className={
+                  hideDescription
+                    ? "sr-only"
+                    : "truncate font-mono text-xs uppercase tracking-wider text-fg-muted"
+                }
+              >
                 {currentImage?.alt ?? "System screenshot preview"}
               </Dialog.Description>
             </div>

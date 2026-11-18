@@ -15,15 +15,15 @@ Three byte-identical duplicate cover uploads present in `public/projects/` were 
 
 ---
 
-## Personal & Brand Assets (18 Files)
+## Personal & Brand Assets
 
 | Clean Bundle Path | Original Source Path | Purpose |
 | :--- | :--- | :--- |
 | `assets/personal/avatar.png` | `public/avatar.png` | Profile avatar |
-| `assets/personal/about-me-hero.jpg` | `public/about-me-hero.jpg` | Hero portrait image |
+| `assets/personal/about-me-hero.jpg` | `public/about-me-hero.jpg` | Workspace setup archive photo |
 | `assets/personal/about-me-transition.mp4` | `public/about-me-transition.mp4` | Interactive portrait video |
 | `assets/personal/main-icon.svg` | `public/main-icon.svg` | SVG site mark / favicon |
-| `assets/personal/gallery/01.jpg` – `11.jpg` | `public/personals/6280409722531812042..52.jpg` | 11 About-page photo cards |
+| `assets/personal/gallery/01.jpg` – `13.jpg` | `public/personals/` + uploaded DJ photos (`12.jpg`, `13.jpg`) | 10 active frames rendered on `/personal` (`01.jpg`–`05.jpg`, `07.jpg`–`10.jpg`, `13.jpg`; `06.jpg`, `11.jpg`, `12.jpg` omitted from live UI) |
 | `assets/brand-logos/kado-kohi.png` | `public/brand-logos/Kado Kohi.png` | Client logo |
 | `assets/brand-logos/marked-media.png` | `public/brand-logos/Marked Media.png` | Agency / freelance logo |
 | `assets/brand-logos/marketing-hive.png` | `public/brand-logos/Marketing Hive.png` | Employer logo |

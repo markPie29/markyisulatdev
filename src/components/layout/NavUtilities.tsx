@@ -22,7 +22,7 @@ export function useIsClient(): boolean {
 }
 
 /**
- * Resolves active sidebar navigation index (01-06) from the current pathname.
+ * Resolves active sidebar navigation index (01-07) from the current pathname.
  */
 export function getActiveNavIndex(pathname: string): number {
   if (pathname === "/") return 0;
@@ -31,6 +31,7 @@ export function getActiveNavIndex(pathname: string): number {
   if (pathname.startsWith("/stack")) return 3;
   if (pathname.startsWith("/services")) return 4;
   if (pathname.startsWith("/testimonials")) return 5;
+  if (pathname.startsWith("/personal")) return 6;
   return 0;
 }
 

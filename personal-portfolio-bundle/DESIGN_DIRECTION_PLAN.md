@@ -15,8 +15,8 @@
 | **Color & Imagery** | Strict monochrome UI. Hero portrait has its background removed and rendered in monochrome/grayscale; project images render in grayscale at rest on desktop and transition to full color on hover (with full color by default on mobile viewports and `/projects/:slug` case studies) |
 | **Typography** | **Helvetica Neue** (Light, Roman, Medium, Bold) + **Monospace** (JetBrains Mono / Geist Mono) for indices, tags, and metadata |
 | **Headlines** | Sentence case, Medium/Bold weight, tight negative tracking (`-0.04em`), fluid `clamp()` sizing |
-| **Architecture** | **Hub & Deep-Dive (Multi-Page):** Quick-scroll Overview on `/` + 5 dedicated deep-dive pages (`/projects`, `/experience`, `/stack`, `/services`, `/testimonials`) + `/projects/:slug` case studies |
-| **Sidebar Nav** | Fixed left sidebar (~260px) using monochrome `LineSidebar` with `01`–`06` route items; collapses to a top bar + full-screen overlay under `1024px` |
+| **Architecture** | **Hub & Deep-Dive (Multi-Page):** Quick-scroll Overview on `/` + 6 dedicated deep-dive pages (`/projects`, `/experience`, `/stack`, `/services`, `/testimonials`, `/personal`) + `/projects/:slug` case studies |
+| **Sidebar Nav** | Fixed left sidebar (~260px) using monochrome `LineSidebar` with `01`–`07` route items; collapses to a top bar + full-screen overlay under `1024px` |
 | **Motion** | Native browser scroll (no Lenis, no GSAP). 100% powered by `motion/react`: `<Reveal>` fade-ups (`16px -> 0`), line-mask slide-up on headings, `250ms` route transitions, and a once-per-session typographic loader |
 | **Shapes & Icons** | `0px` border radius, hairline borders, text + arrow (`↗`) links, inverted solid block for primary CTA, plus **small monochrome accent icons** (`lucide-react` + `react-icons/si`) |
 | **Tech Stack** | **Next.js 15/16 (App Router) + TypeScript**, **Zero-DB Static Content**, **Tailwind CSS v4 + `next-themes`**, **Radix Primitives (Tabs, Dialog)**, **React Hook Form + Zod** (ready for Resend / Cal.com), deployed on **Vercel** with `next/og` dynamic Swiss OG cards |
@@ -63,6 +63,7 @@ flowchart LR
   Home --> ST["/stack — 04 Complete Stack (3 Pillars + Contextual Matrix)"]
   Home --> SV["/services — 05 Services & Consultations (4/8 Services + 3-Col Selector + Booking)"]
   Home --> T["/testimonials — 06 Testimonials (Quote + Project Proof 7/5 Split)"]
+  Home --> PE["/personal — 07 Personal (Personal Life: Filmstrip Reel + Origin + 6/6 Interests & Channels)"]
 ```
 
 ### Fixed Left Sidebar (`≥1024px`, ~260px wide)
@@ -76,6 +77,7 @@ Full-Stack Developer        ← Subtitle (--fg-muted)
 04  Stack                   ← /stack
 05  Services                ← /services
 06  Testimonials            ← /testimonials
+07  Personal                ← /personal
 
 ● Available for work        ← Mono status
 [GH]     [LI]     [FB]     [DC] ← Icon-only social links (`justify-between`, no border/box, no text)
@@ -415,6 +417,20 @@ Ordered: **01 Marked Media (Founder)** → **02 Off Grid Lifestyle PH** → **03
 
 ---
 
+## 9.5 Page 07: `/personal` — Personal Life (Off-Duty Archive)
+
+* **Header:** `07 / PERSONAL ARCHIVE — OFF DUTY` eyebrow · `Personal Life` display `h1` · concise 1-sentence intro (matches `/projects` & `/experience` page header rhythm, with no bottom CTA footer).
+* **Top Block — Pure Full-Color Infinite Filmstrip Reel (`PersonalArchiveSection.tsx`):**
+  * Header bar (`10 FRAMES`, live `01 / 10` counter, `Prev` / `Next` controls).
+  * Horizontal `aspect-[4/5]` pure full-color photo cards (`34px/s` rAF auto-glide pausing on hover/focus/touch/lightbox, mouse drag-to-scroll, zero card text). Clicking any photo opens `CaseStudyLightbox` (`07 // Personal Life` + `01 / 10` with `hideDescription`).
+* **Row 1 — Unified Origin Intro Card:**
+  * Single full-width hairline card applying the `HomeServicesGrid` radial-gradient sheen (`--fg` 7% radial glow) + giant thin-stroke `Sparkles` watermark (`strokeWidth={0.85}`) on the right alongside the 2 concise origin paragraphs on the left.
+* **Row 2 (`6 / 6` Split):**
+  * **Left 6 Cols (`01 // OFF-DUTY INTERESTS`):** `2×5` hairline grid of 10 title-only items + Lucide icons (`Basketball`, `Volleyball`, `Gym`, `Gaming`, `Content Creation`, `DJing`, `Cooking`, `Café Hopping`, `Movies & Shows`, `Café Racer`).
+  * **Right 6 Cols (`02 // CHANNELS`):** `2×2` hover-invert external link cards for TikTok `@_markpie29` (`3,500+ Followers · 262K+ Likes`), TikTok `@markdmedia` (`1,200+ Followers · 28.2K+ Likes`), YouTube `@djmarkpie` (`2.19K+ Subscribers · 568K+ Views`), and Instagram `@marky_write` (`200+ Followers · 11 Posts`).
+
+---
+
 ## 10. Tech Stack & Next.js Architecture Specification
 
 ### 10.1 Approved Tech Stack
@@ -439,7 +455,7 @@ marky-portfolio-2k26/
 │   ├── fonts/                             # HelveticaNeue (Light, Roman, Medium, Bold)
 │   ├── resumes/                           # Mark_Isulat_Developer_Resume.pdf
 │   └── assets/                            # Copied from personal-portfolio-bundle/assets/
-│       ├── personal/                      # hero-portrait-cutout-bw.png, avatar.png, main-icon.svg
+│       ├── personal/                      # hero-portrait-cutout-bw.png, avatar.png, main-icon.svg, gallery/ (10 active frames)
 │       ├── brand-logos/                   # Marked Media SVG, Off Grid Light/Dark PNGs, Nexvision/Marketing Hive/AP Global mono PNGs
 │       └── projects/                      # real-projects/, passion-projects/, multimedia-design/ screenshots + demo.mp4
 ├── src/
@@ -461,8 +477,10 @@ marky-portfolio-2k26/
 │   │   │   └── page.tsx                   # 04 Complete Tech & Design Stack (/stack)
 │   │   ├── services/
 │   │   │   └── page.tsx                   # 05 Services + 3 Consultations + #booking Form (/services)
-│   │   └── testimonials/
-│   │       └── page.tsx                   # 06 Testimonials + Project Proof (/testimonials)
+│   │   ├── testimonials/
+│   │   │   └── page.tsx                   # 06 Testimonials + Project Proof (/testimonials)
+│   │   └── personal/
+│   │       └── page.tsx                   # 07 Personal (/personal) — Personal Life Archive
 │   ├── components/
 │   │   ├── layout/
 │   │   │   ├── SidebarShell.tsx           # Desktop 260px fixed sidebar (Identity + LineSidebar + Footer)
@@ -476,11 +494,13 @@ marky-portfolio-2k26/
 │   │   ├── home/
 │   │   │   ├── FeaturedProjectsCarousel.tsx # 5-project Peek-a-Boo 2.5s auto-play vertical card carousel
 │   │   │   └── HomeServicesGrid.tsx       # 3x2 Swiss hairline Services & Consultations hover-invert card grid
+│   │   ├── personal/
+│   │   │   └── PersonalArchiveSection.tsx # 10-frame full-color filmstrip reel, radial-sheen origin card & 6/6 grid
 │   │   ├── projects/                      # ProjectsTabsView, CaseStudyGallerySection, CaseStudyLightbox
 │   │   ├── services/                      # ServicesBookingClient
 │   │   └── ui/                            # BrandLogo, TechIcon, SectionHeader, ResumeTriggerButton
 │   ├── data/                              # Zero-DB static typed source of truth
-│   │   ├── profile.ts                     # Identity, thesis, KPIs, socials, 01–06 nav
+│   │   ├── profile.ts                     # Identity, thesis, KPIs, socials, 01–07 nav & personalArchive
 │   │   ├── projects.ts                    # Real Users (4), Passion (5), Multimedia (8) + shortDescription & case study copy
 │   │   ├── experience.ts                  # 5 Roles (Marked Media Founder -> AP Global) + Credentials
 │   │   ├── stack.ts                       # 3 Unfair Advantage Pillars + 5 Categorized Tool Matrices

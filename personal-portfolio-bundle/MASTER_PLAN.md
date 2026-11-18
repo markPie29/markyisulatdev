@@ -40,9 +40,9 @@ Many full-stack developers build technically capable backends wrapped in confusi
 
 Everything needed to bootstrap the new Personal Developer Portfolio is organized inside `personal-portfolio-bundle/`:
 * [`SOFTWARE_PORTFOLIO_DATA.md`](./SOFTWARE_PORTFOLIO_DATA.md) — Complete single-file developer dossier
-* [`docs/`](./docs/) — Modular Markdown specs (`01-profile-and-narrative.md` through `06-asset-manifest.md`)
+* [`docs/`](./docs/) — Modular Markdown specs (`01-profile-and-narrative.md` through `08-multimedia-and-master-context.md`)
 * [`resumes/`](./resumes/) — Updated developer resume Markdown + existing PDF copy
-* [`assets/`](./assets/) — 72 deduplicated visual & video assets grouped cleanly into `personal/`, `brand-logos/`, and `projects/{real-projects,passion-projects}/<slug>/`
+* [`assets/`](./assets/) — Deduplicated visual & video assets grouped cleanly into `personal/`, `brand-logos/`, and `projects/{real-projects,passion-projects,multimedia-design}/<slug>/`
 
 ---
 
@@ -93,13 +93,13 @@ Unified reverse-chronological timeline framed through **The Engineer's Lens**:
 
 ### Phase 2: Personal Portfolio Initialization *(Completed — Live in This Repository)*
 * Built the dedicated Personal Developer Portfolio codebase (`marky-portfolio-2k26`) on Next.js 16 + TypeScript + Tailwind CSS v4 (see [`DESIGN_DIRECTION_PLAN.md`](./DESIGN_DIRECTION_PLAN.md) for the live UI/layout spec and `src/` for implementation).
-* Active 6-route navigation & Home overview order: `01 Overview` (`/`), `02 Projects` (`/projects` & `/projects/[slug]`), `03 Experience` (`/experience`), `04 Stack` (`/stack`), `05 Services` (`/services`), and `06 Testimonials` (`/testimonials`).
+* Active 7-route navigation & Home overview order: `01 Overview` (`/`), `02 Projects` (`/projects` & `/projects/[slug]`), `03 Experience` (`/experience`), `04 Stack` (`/stack`), `05 Services` (`/services`), `06 Testimonials` (`/testimonials`), and `07 Personal` (`/personal` — *"Personal Life"*).
 * Home overview (`src/app/page.tsx`) includes:
   * Hero section focused on **Product-Oriented Full-Stack Developer** positioning (*"I don't just build systems; I build systems that help actual users"*).
   * 5-project Peek-a-Boo `FeaturedProjectsCarousel` with subtle monochrome radial gray surface sheen.
   * 5-role Work Experience ledger (company name followed by theme-adaptive monochrome logo via `BrandLogo.tsx`, including `nexvision-innovations-mono.png` and `ap-global-mono.png`).
   * `3×2` Swiss hairline `HomeServicesGrid` (top row Services, bottom row Consultations; giant faded icons at rest with inverted hover/focus reveal linking to `/services#<id>`).
-  * Dual-plus-multimedia project tabs (`Real Users`, `Passion & Explorations`, `Multimedia & Brand Design`) on `/projects` using scannable `6/6` horizontal cards (title, role subtitle, 1-sentence `shortDescription`, icon-only `<TechIcon />` stack row with `+N` overflow, top-left `Trophy` award overlay, and uniform `View Case Study →` button), sticky `4/8` case studies (`/projects/[slug]` housing full `Problem & Context`, `The Human & UX Touch`, and live links), full `4/8` Experience + Credentials ledger, contextual Stack matrix, Services + `#consultations` + `#booking` flow, and Client Testimonials.
+  * Dual-plus-multimedia project tabs (`Real Users`, `Passion & Explorations`, `Multimedia & Brand Design`) on `/projects` using scannable `6/6` horizontal cards (title, role subtitle, 1-sentence `shortDescription`, icon-only `<TechIcon />` stack row with `+N` overflow, top-left `Trophy` award overlay, and uniform `View Case Study →` button), sticky `4/8` case studies (`/projects/[slug]` housing full `Problem & Context`, `The Human & UX Touch`, and live links), full `4/8` Experience + Credentials ledger, contextual Stack matrix, Services + `#consultations` + `#booking` flow, Client Testimonials, and `/personal` (`07 Personal` off-duty archive with 10-frame full-color filmstrip reel, Services-style radial-gradient origin card, 10 title-only off-duty interests, and 4 creator channel cards).
 
 ### Phase 3: Transform `react-portfolio-2k26` into Marked Media Official Site
 * Rebrand navigation, hero, and metadata from "Mark Angelo Isulat" to **Marked Media**.

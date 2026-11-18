@@ -168,3 +168,30 @@
 * **Education:** Bachelor of Science in Computer Engineering (BSCpE), University of Rizal System – Antipolo Campus (2023 – Present)
 * **Honors & Scholarships:** AppBuilders PH Hackathon 2026 1st Runner-Up (Top 2 of 280+), DOST-SEI S&T Scholar (R.A. 7687), Vice President – College of Engineering Student Council (AY 2025–2026), Delegate (Marked Media) – Echelon Philippines 2026
 * **Certifications:** Nexvision Innovations Internship (2026), AP Global IT Solutions Internship (2023), TESDA Microsoft Digital Literacy, freeCodeCamp Legacy Responsive Web Design V8, Canva Graphic Design Basics
+
+---
+
+## 5. Personal Life (`07 / Personal` — Off-Duty Archive)
+
+* **Route:** `/personal` (`07 / PERSONAL ARCHIVE — OFF DUTY` · Heading: `Personal Life`)
+* **Origin Summary:**
+  * *"I'm Mark Angelo A. Isulat — everyone calls me Marky. I started coding at 16 and entered visual design at 18."*
+  * *"Now a 4th-year BS Computer Engineering student at URS Antipolo and a DOST-SEI Scholar, I split my time between building client products, playing #09 varsity volleyball, and mixing live sets as DJ markPie."*
+* **Off-Duty Interests (`01 // OFF-DUTY INTERESTS`):**
+  1. `01` Basketball
+  2. `02` Volleyball
+  3. `03` Gym
+  4. `04` Gaming
+  5. `05` Content Creation
+  6. `06` DJing
+  7. `07` Cooking
+  8. `08` Café Hopping
+  9. `09` Movies & Shows
+  10. `10` Café Racer
+* **Creator & DJ Channels (`02 // CHANNELS`):**
+  * **TikTok (`@_markpie29`):** `3,500+ Followers` · `262K+ Likes` (`https://www.tiktok.com/@_markpie29`)
+  * **TikTok (`@markdmedia`):** `1,200+ Followers` · `28.2K+ Likes` (`https://www.tiktok.com/@markdmedia`)
+  * **YouTube (`@djmarkpie`):** `2.19K+ Subscribers` · `568K+ Views` (`https://www.youtube.com/@djmarkpie`)
+  * **Instagram (`@marky_write`):** `200+ Followers` · `11 Posts` (`https://www.instagram.com/marky_write/`)
+* **Filmstrip Gallery (`10` Active Full-Color Frames):**
+  `assets/personal/gallery/` — `01.jpg`, `13.jpg`, `08.jpg`, `04.jpg`, `02.jpg`, `07.jpg`, `09.jpg`, `05.jpg`, `10.jpg`, `03.jpg`

@@ -25,6 +25,44 @@ export interface KpiMetric {
   label: string;
 }
 
+export interface PersonalGalleryItem {
+  index: string;
+  src: string;
+  alt: string;
+}
+
+export interface PersonalHobbyItem {
+  index: string;
+  id: string;
+  title: string;
+}
+
+export interface CreatorChannelItem {
+  index: string;
+  id: "tiktok-personal" | "tiktok-studio" | "youtube-dj" | "instagram";
+  platform: string;
+  handle: string;
+  primaryStat: string;
+  secondaryStat: string;
+  url: string;
+}
+
+export interface PersonalSpecItem {
+  label: string;
+  value: string;
+}
+
+export interface PersonalArchiveData {
+  pageEyebrow: string;
+  heading: string;
+  subheading: string;
+  originParagraphs: string[];
+  specs: PersonalSpecItem[];
+  gallery: PersonalGalleryItem[];
+  hobbies: PersonalHobbyItem[];
+  channels: CreatorChannelItem[];
+}
+
 export interface ProfileData {
   name: string;
   firstName: string;
@@ -57,6 +95,7 @@ export interface ProfileData {
   kpis: KpiMetric[];
   socials: SocialLink[];
   navigation: NavItem[];
+  personalArchive: PersonalArchiveData;
 }
 
 export interface ProjectMediaItem {

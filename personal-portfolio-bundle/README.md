@@ -26,7 +26,7 @@ personal-portfolio-bundle/
 │   └── Mark_Isulat_Developer_Resume.pdf         # PDF resume
 └── assets/                                      # All fonts, personal photos, logos & project media ready for public/
     ├── fonts/                                   # HelveticaNeue (.otf/.ttf family — Light, Roman, Medium, Bold, etc.)
-    ├── personal/                                # hero-portrait-raw.jpg (uploaded portrait), about-me-hero.jpg, avatar.png, main-icon.svg, gallery/
+    ├── personal/                                # hero-portrait-raw.png, about-me-hero.jpg, avatar.png, main-icon.svg, gallery/ (10 active frames on /personal)
     ├── brand-logos/                             # Company & client brand logos (Marked Media, Kado Kohi, Marketing Hive, etc.)
     └── projects/
         ├── real-projects/                       # sk-logistics/, doze-beauty-lounge/, kado-kohi/, off-grid-lifestyle-ph/
@@ -39,5 +39,5 @@ personal-portfolio-bundle/
 ## Quick-Start for Your New Next.js Repo
 
 1. **Create your new Next.js repo** and copy this entire `personal-portfolio-bundle/` folder into it (or copy `assets/` directly into `public/assets/` and `resumes/` into `public/resumes/`).
-2. **Point your AI assistant to [`DESIGN_DIRECTION_PLAN.md`](./DESIGN_DIRECTION_PLAN.md)** — it contains the finalized color tokens, typography scale, 6-page + case-study ASCII wireframes, real client testimonials, and exact Next.js App Router directory structure.
+2. **Point your AI assistant to [`DESIGN_DIRECTION_PLAN.md`](./DESIGN_DIRECTION_PLAN.md)** — it contains the finalized color tokens, typography scale, 7-page + case-study ASCII wireframes, real client testimonials, and exact Next.js App Router directory structure.
 3. **Use [`SOFTWARE_PORTFOLIO_DATA.md`](./SOFTWARE_PORTFOLIO_DATA.md) and [`docs/`](./docs/)** to populate the static TypeScript data files in `src/data/`.
