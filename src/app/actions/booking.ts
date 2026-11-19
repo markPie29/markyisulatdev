@@ -3,10 +3,18 @@
 import { PROFILE } from "@/data/profile";
 import { CORE_SERVICES, CONSULTATION_TIERS } from "@/data/services";
 import { bookingSchema, type BookingInput } from "@/lib/booking-schema";
+import {
+  buildBookingTextSummary,
+  formatPhtTimestamp,
+  sanitizeSingleLine,
+  type BookingEmailPayload,
+} from "@/lib/email/booking-templates";
+import { dispatchBookingEmails } from "@/lib/email/resend";
 
 export interface BookingActionResult {
   ok: boolean;
   deliveryMode?: "resend" | "structured-receipt";
+  confirmationSent?: boolean;
   referenceId?: string;
   tierLabel?: string;
   serviceLabel?: string;
@@ -30,9 +38,15 @@ function getTierLabel(tier: BookingInput["consultationTier"]): string {
   return found ? `${found.title} (${found.priceLabel})` : tier;
 }
 
+function createReferenceId(): string {
+  const timestamp = Date.now().toString(36).toUpperCase();
+  const suffix = crypto.randomUUID().slice(0, 4).toUpperCase();
+  return `MI-${timestamp}-${suffix}`;
+}
+
 /**
- * Validates consultation/service booking requests via Zod and either sends via Resend
- * (when RESEND_API_KEY is configured) or returns a structured receipt with mailto fallback.
+ * Validates consultation/service booking requests via Zod and dispatches via Resend
+ * (when RESEND_API_KEY is configured), falling back to a structured receipt + mailto link.
  */
 export async function submitBookingInquiry(
   rawInput: BookingInput,
@@ -49,76 +63,55 @@ export async function submitBookingInquiry(
   }
 
   const data = parsed.data;
-  const referenceId = `MI-${Date.now().toString(36).toUpperCase()}`;
+  const referenceId = createReferenceId();
   const tierLabel = getTierLabel(data.consultationTier);
   const serviceLabel = getServiceLabel(data.serviceFocus);
 
-  const summaryLines = [
-    `MARKY ISULAT — CONSULTATION & SERVICE RECEIPT`,
-    `Reference ID: ${referenceId}`,
-    `Consultation Tier: ${tierLabel}`,
-    `Service Focus: ${serviceLabel}`,
-    `Full Name: ${data.fullName}`,
-    `Email: ${data.email}`,
-    `Organization / School: ${data.organizationOrSchool}`,
-    `Preferred Schedule: ${data.preferredSchedule}`,
-    data.consultationTier === "thesis-capstone" && data.coffeeSupportReference
-      ? `Buy Me a Coffee Support Ref: ${data.coffeeSupportReference}`
-      : null,
-    ``,
-    `Project / Review Summary:`,
-    data.projectSummary,
-  ].filter((line): line is string => line !== null);
+  const emailPayload: BookingEmailPayload = {
+    referenceId,
+    submittedAtPht: formatPhtTimestamp(),
+    tierLabel,
+    serviceLabel,
+    consultationTier: data.consultationTier,
+    serviceFocus: data.serviceFocus,
+    fullName: data.fullName,
+    email: data.email,
+    organizationOrSchool: data.organizationOrSchool,
+    preferredSchedule: data.preferredSchedule,
+    projectSummary: data.projectSummary,
+    coffeeSupportReference: data.coffeeSupportReference,
+    recipientEmail: PROFILE.email,
+    websiteUrl: PROFILE.website,
+  };
 
-  const summaryText = summaryLines.join("\n");
-  const subject = `[Portfolio Booking ${referenceId}] ${tierLabel} — ${data.fullName}`;
+  const summaryText = buildBookingTextSummary(emailPayload);
+  const subject = `[Portfolio Booking ${referenceId}] ${sanitizeSingleLine(tierLabel)} — ${sanitizeSingleLine(data.fullName)}`;
   const mailtoUrl = `mailto:${PROFILE.email}?subject=${encodeURIComponent(
     subject,
   )}&body=${encodeURIComponent(summaryText)}`;
 
-  const resendApiKey = process.env.RESEND_API_KEY?.trim();
+  const dispatch = await dispatchBookingEmails(emailPayload);
 
-  if (resendApiKey) {
-    try {
-      const fromAddress =
-        process.env.RESEND_FROM_EMAIL?.trim() ||
-        "Marky Isulat Portfolio <onboarding@resend.dev>";
-
-      const response = await fetch("https://api.resend.com/emails", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${resendApiKey}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          from: fromAddress,
-          to: [PROFILE.email],
-          reply_to: data.email,
-          subject,
-          text: summaryText,
-        }),
-      });
-
-      if (response.ok) {
-        return {
-          ok: true,
-          deliveryMode: "resend",
-          referenceId,
-          tierLabel,
-          serviceLabel,
-          mailtoUrl,
-          summaryText,
-          statusNote: `Your inquiry (${referenceId}) was dispatched directly to ${PROFILE.email}. You can also copy the receipt below for your records.`,
-        };
-      }
-    } catch {
-      // Fall through to structured receipt + mailto fallback so user inquiry is never lost.
-    }
+  if (dispatch.dispatched) {
+    return {
+      ok: true,
+      deliveryMode: "resend",
+      confirmationSent: dispatch.confirmationSent,
+      referenceId,
+      tierLabel,
+      serviceLabel,
+      mailtoUrl,
+      summaryText,
+      statusNote: dispatch.confirmationSent
+        ? `Your inquiry (${referenceId}) was dispatched directly to ${PROFILE.email}, and a confirmation receipt was sent to ${data.email}.`
+        : `Your inquiry (${referenceId}) was dispatched directly to ${PROFILE.email}. You can also copy the receipt below for your records.`,
+    };
   }
 
   return {
     ok: true,
     deliveryMode: "structured-receipt",
+    confirmationSent: false,
     referenceId,
     tierLabel,
     serviceLabel,

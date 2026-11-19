@@ -25,6 +25,16 @@ Personal portfolio website for **Mark Angelo A. Isulat ("Marky")** — **Product
 * [`personal-portfolio-bundle/MASTER_PLAN.md`](./personal-portfolio-bundle/MASTER_PLAN.md) — Brand positioning and portfolio separation strategy.
 * [`personal-portfolio-bundle/SOFTWARE_PORTFOLIO_DATA.md`](./personal-portfolio-bundle/SOFTWARE_PORTFOLIO_DATA.md) — Canonical profile, experience, projects, and credentials dossier.
 
+## Environment Variables (Resend Booking Integration)
+
+Booking inquiries on `/services` (`src/app/actions/booking.ts` + `src/lib/email/resend.ts`) use the `resend` SDK and fall back gracefully to a structured receipt + `mailto:` link when no API key is configured.
+
+1. Copy `.env.example` to `.env.local` (or fill in the generated `.env.local`).
+2. Add `RESEND_API_KEY` from [Resend API Keys](https://resend.com/api-keys).
+3. Set `RESEND_FROM_EMAIL`:
+   * **Local sandbox:** `"Marky Isulat Portfolio <onboarding@resend.dev>"` (delivers only to your Resend account email; visitor auto-confirmations stay disabled automatically).
+   * **Production:** `"Marky Isulat <bookings@markyisulat.dev>"` after verifying `markyisulat.dev` DNS records in Resend (visitor confirmation receipts enable automatically).
+
 ## Development Commands
 
 ```bash
