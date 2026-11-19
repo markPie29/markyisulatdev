@@ -90,12 +90,6 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Mark Angelo A. Isulat", url: "https://markyisulat.dev" }],
   creator: "Mark Angelo A. Isulat",
-  icons: {
-    icon: [
-      { url: "/assets/personal/main-icon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "any" },
-    ],
-  },
   openGraph: {
     type: "website",
     locale: "en_US",

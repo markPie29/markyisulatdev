@@ -15,7 +15,7 @@ Personal portfolio website for **Mark Angelo A. Isulat ("Marky")** — **Product
 * `/projects` & `/projects/[slug]` — `02 Projects`: Tabbed showcase across Real Users, Passion & Explorations, and Multimedia & Brand Design using scannable `6/6` horizontal cards (title, role subtitle, concise `shortDescription`, icon-only `<TechIcon />` logos with `+N` overflow, top-left `Trophy` award overlay, and uniform `View Case Study →` button), plus sticky `4/8` case studies (`Problem & Context`, `The Human & UX Touch`, galleries, and live links).
 * `/experience` — `03 Experience`: 5-role career ledger framed through The Engineer's Lens with theme-adaptive monochrome logos (`BrandLogo.tsx`), plus Education, Honors & Verified Certifications.
 * `/stack` — `04 Stack`: `01 — THE PRODUCT-ORIENTED EDGE` pillars and 5-category proof-backed technical tool matrix.
-* `/services` — `05 Services`: Core services, 3-tier consultation selector (`#business`, `#speaking`, `#thesis-capstone` hash anchors), and Zod-validated booking inquiry form.
+* `/services` — `05 Services`: Core services, 3-tier consultation selector (`#business`, `#speaking`, `#thesis-capstone` hash anchors), and Zod-validated booking inquiry form backed by Resend (`bookings@markyisulat.dev`) with automated visitor confirmation receipts and structured `mailto:` fallback.
 * `/testimonials` — `06 Testimonials`: Verified client perspectives paired with case-study previews.
 * `/personal` — `07 Personal`: `Personal Life` standalone page featuring a 10-frame full-color infinite filmstrip photo reel (`PersonalArchiveSection.tsx`) with lightbox inspection, Services-style radial-gradient origin card, 10 title-only off-duty interests (`01 // OFF-DUTY INTERESTS`), and 4 hover-invert creator channel cards (`02 // CHANNELS`).
 
@@ -27,13 +27,14 @@ Personal portfolio website for **Mark Angelo A. Isulat ("Marky")** — **Product
 
 ## Environment Variables (Resend Booking Integration)
 
-Booking inquiries on `/services` (`src/app/actions/booking.ts` + `src/lib/email/resend.ts`) use the `resend` SDK and fall back gracefully to a structured receipt + `mailto:` link when no API key is configured.
+Booking inquiries on `/services` (`src/app/actions/booking.ts` + `src/lib/email/resend.ts` + `src/lib/email/booking-templates.ts`) use the `resend` SDK and fall back gracefully to a structured receipt + `mailto:` link when no API key is configured.
 
-1. Copy `.env.example` to `.env.local` (or fill in the generated `.env.local`).
+1. Copy `.env.example` to `.env.local` (or fill in your local `.env.local`).
 2. Add `RESEND_API_KEY` from [Resend API Keys](https://resend.com/api-keys).
 3. Set `RESEND_FROM_EMAIL`:
    * **Local sandbox:** `"Marky Isulat Portfolio <onboarding@resend.dev>"` (delivers only to your Resend account email; visitor auto-confirmations stay disabled automatically).
-   * **Production:** `"Marky Isulat <bookings@markyisulat.dev>"` after verifying `markyisulat.dev` DNS records in Resend (visitor confirmation receipts enable automatically).
+   * **Production:** `"Marky Isulat <bookings@markyisulat.dev>"` (`markyisulat.dev` DNS verified in Resend; visitor confirmation receipts enable automatically).
+4. Optional overrides: `RESEND_TO_EMAIL` (defaults to `PROFILE.email`), `RESEND_SEND_CONFIRMATION` (`"true"` / `"false"`), and `NEXT_PUBLIC_BUYMEACOFFEE_URL`.
 
 ## Development Commands
 

@@ -19,7 +19,7 @@
 | **Sidebar Nav** | Fixed left sidebar (~260px) using monochrome `LineSidebar` with `01`–`07` route items; collapses to a top bar + full-screen overlay under `1024px` |
 | **Motion** | Native browser scroll (no Lenis, no GSAP). 100% powered by `motion/react`: `<Reveal>` fade-ups (`16px -> 0`), line-mask slide-up on headings, `250ms` route transitions, and a once-per-session typographic loader |
 | **Shapes & Icons** | `0px` border radius, hairline borders, text + arrow (`↗`) links, inverted solid block for primary CTA, plus **small monochrome accent icons** (`lucide-react` + `react-icons/si`) |
-| **Tech Stack** | **Next.js 15/16 (App Router) + TypeScript**, **Zero-DB Static Content**, **Tailwind CSS v4 + `next-themes`**, **Radix Primitives (Tabs, Dialog)**, **React Hook Form + Zod** (ready for Resend / Cal.com), deployed on **Vercel** with `next/og` dynamic Swiss OG cards |
+| **Tech Stack** | **Next.js 16 (App Router) + TypeScript**, **Zero-DB Static Content**, **Tailwind CSS v4 + `next-themes`**, **Radix Primitives (Tabs, Dialog)**, **React Hook Form + Zod + Resend SDK** (`bookings@markyisulat.dev`), deployed on **Vercel** (`markyisulat.dev`) with `next/og` dynamic Swiss OG cards |
 
 ---
 
@@ -391,7 +391,8 @@ Ordered: **01 Marked Media (Founder)** → **02 Off Grid Lifestyle PH** → **03
 ```
 
 ### 8.3 Part 3: `#booking` — Modular Booking & Inquiry Section
-- **Zero-DB Static First:** Built as a clean modular section using `react-hook-form` + `zod` with an adapter pattern so you can plug in **Resend** (via a Next.js Server Action) and/or a **Cal.com** embed later without touching the UI layout.
+- **Zero-DB Static First with Live Resend Dispatch:** Built with `react-hook-form` + `zod` (`src/lib/booking-schema.ts`) and backed by the `submitBookingInquiry` Server Action (`src/app/actions/booking.ts` → `src/lib/email/resend.ts` + `src/lib/email/booking-templates.ts`).
+- When `RESEND_API_KEY` is configured, dispatches a Swiss-monochrome HTML + plain-text inquiry brief from verified `bookings@markyisulat.dev` to `markyisulat@gmail.com` (`replyTo` set to the requester) and automatically sends a confirmation receipt to the requester (when `RESEND_FROM_EMAIL` is on a verified custom domain); falls back gracefully to a `structured-receipt` + prefilled `mailto:` link if `RESEND_API_KEY` is unset or delivery fails.
 - Supports hash pre-selection on load (`#software-development`, `#multimedia-design`, `#digital-marketing`, `#business`, `#speaking`, `#thesis-capstone`).
 - When `03 / Thesis & Capstone` is selected, reveals **Step 1 — Support via Buy Me a Coffee** (`[ ☕ Buy Me a Coffee ↗ ]` + reference/note input) alongside the 3-hour session details.
 
@@ -442,7 +443,7 @@ Ordered: **01 Marked Media (Founder)** → **02 Off Grid Lifestyle PH** → **03
 | **Data & Content Layer** | **Zero-DB Static TypeScript Modules (`src/data/*.ts`)** | All projects, case studies, experience, stack, testimonials, and services are statically typed in the repo — zero database latency, zero cold starts, 100% uptime |
 | **Styling & Theme** | **Tailwind CSS v4 + `next-themes` + CSS Variables** | Tokenized `--bg`, `--surface`, `--fg`, `--fg-muted`, `--fg-subtle`, `--line`, `--invert-bg` for flash-free Dark (default) and Light mode switching |
 | **UI Primitives** | **Headless Radix UI (`@radix-ui/react-tabs`, `@radix-ui/react-dialog`)** | Keyboard-accessible category tabs on `/projects` and full-screen screenshot lightbox on `/projects/:slug` with `0px` Swiss styling |
-| **Forms & Future Integrations** | **`react-hook-form` + `zod`** (Adapter-ready for **Resend** & **Cal.com**) | Strict client/server schema validation on `/services#booking`, ready to connect to a Resend Server Action or Cal.com embed whenever you choose |
+| **Forms & Email Delivery** | **`react-hook-form` + `zod` + `resend`** | Strict client/server schema validation on `/services#booking`, dispatching HTML + plain-text owner briefs and automated visitor confirmation receipts via Resend (`bookings@markyisulat.dev`) with a `structured-receipt` + `mailto:` fallback |
 | **Animations & Motion** | **`motion/react` (Framer Motion v12)** + Custom rAF `LineSidebar` | Single animation library for the once-per-session typographic loader (`000 -> 100` + upward wipe), `<Reveal>` scroll entries, line-mask headings, and `template.tsx` route fades (drops Lenis & GSAP to save ~80KB) |
 | **Iconography** | **`lucide-react` + `react-icons/si` (Simple Icons)** | `1.5px`-stroke directional/UI icons (`↗`, `←`, `☾`, `☀`) + crisp monochrome brand/tool SVGs for React, Next.js, Supabase, Electron, Figma, Adobe Suite, etc. |
 | **SEO & Deployment** | **Vercel + Next.js Metadata API + `next/og`** | Dynamic Swiss monochrome OpenGraph preview cards generated automatically for `/` and every `/projects/:slug` case study, plus auto-generated `sitemap.xml` and `robots.txt` |
@@ -463,9 +464,12 @@ marky-portfolio-2k26/
 │   │   ├── layout.tsx                     # Root HTML, local fonts, ThemeProvider, persistent Left Sidebar shell
 │   │   ├── template.tsx                   # 250ms content-area fade transition between routes
 │   │   ├── page.tsx                       # 01 Overview (/) — Hero + Overview Sections 02–06
+│   │   ├── favicon.ico / icon.png / apple-icon.png # Next.js App Router file-convention icons
 │   │   ├── opengraph-image.tsx            # Dynamic Swiss monochrome OG card for Home
 │   │   ├── sitemap.ts                     # Auto-generated sitemap for all routes & case studies
 │   │   ├── robots.ts                      # SEO robots rules
+│   │   ├── actions/
+│   │   │   └── booking.ts                 # submitBookingInquiry Server Action (Zod + Resend + receipt fallback)
 │   │   ├── projects/
 │   │   │   ├── page.tsx                   # 02 Projects (/projects) — 3 Category Tabs + Scannable 6/6 Showcases
 │   │   │   └── [slug]/
@@ -506,8 +510,15 @@ marky-portfolio-2k26/
 │   │   ├── stack.ts                       # 3 Unfair Advantage Pillars + 5 Categorized Tool Matrices
 │   │   ├── testimonials.ts                # Hajie Alejandro, Humphrey Lacambra, Novy Marquez + proof links
 │   │   └── services.ts                    # 3 Core Services + 3 Consultation Tiers + homeBullets
+│   ├── lib/
+│   │   ├── booking-schema.ts              # Shared Zod schema for /services#booking
+│   │   ├── utils.ts                       # cn() helper with custom Tailwind typography token merge
+│   │   └── email/
+│   │       ├── booking-templates.ts       # XSS-safe Swiss monochrome HTML + plain-text email builders
+│   │       └── resend.ts                  # Resend SDK dispatch, env normalization, and rate-limit retry
 │   └── types/
 │       └── portfolio.ts                   # Strict TypeScript interfaces for all content modules
+├── .env.example                           # Documented Resend & Buy Me a Coffee env template
 ├── tailwind.config.ts / postcss.config.mjs
 ├── next.config.ts
 └── package.json
