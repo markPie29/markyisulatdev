@@ -1,21 +1,21 @@
 # MARK ANGELO A. ISULAT
-**Full-Stack Developer • Product-Oriented Developer**  
+**Product-Oriented Full-Stack Developer**  
 Antipolo City, Philippines | 0948-679-3481 | markyisulat@gmail.com | [markyisulat.dev](https://markyisulat.dev) | [github.com/markPie29](https://github.com/markPie29)
 
 ---
 
 ## PROFESSIONAL SUMMARY
-**1st Runner-Up — AppBuilders PH Hackathon 2026 (Top 2 out of 280+ Submissions)**, **DOST-SEI Scholar (R.A. 7687)**, and **Product-Oriented Full-Stack Developer** focused on building systems that help real users. Combining frontend and UI/UX engineering across **React 19, Next.js, Electron, TypeScript, Tailwind CSS v4, Express.js, and Supabase/PostgreSQL** with practical experience in **graphic design and digital/physical marketing**, I compose clean, user-friendly interfaces directly in code—removing operational friction across enterprise ERPs, automated booking platforms, and e-commerce storefronts.
+**Product-Oriented Full-Stack Developer** combining **software engineering, UI/UX & visual design, and digital/physical marketing** to build systems that help real users and drive measurable outcomes. Bridging full-stack development across **React 19, Next.js, Electron, TypeScript, Tailwind CSS v4, Express.js, and Supabase/PostgreSQL** with hands-on experience in **brand identity, graphic design, conversion funnels, and on-ground marketing campaigns**, I craft intuitive interfaces directly in code—eliminating operational friction and user drop-off across enterprise ERPs, automated booking platforms, and e-commerce storefronts.
 
 ---
 
-## TECHNICAL SKILLS
-- **Frontend & UI Engineering**: React 19, Next.js, Electron 34, TypeScript, JavaScript (ES6+), Tailwind CSS v4, Shadcn UI, Framer Motion, GSAP, TanStack Virtual, Vite
-- **Backend & App Logic**: Node.js, Express.js, Python 3.12, PHP, Laravel, RESTful APIs, Serverless Functions (Vercel, Netlify)
-- **Databases & Cloud**: Supabase (PostgreSQL, RLS, Storage), SQLite, Firebase, MySQL, SQL Server, Vercel, Netlify, Render, Docker
-- **Languages & Interactive Media**: TypeScript, JavaScript, Python, PHP, Java, C#, Visual Basic, SQL, Unity 3D / Vuforia AR (UI/UX & landing integration)
-- **Design & Marketing Tools**: Adobe Photoshop, Adobe Illustrator, Canva, CapCut, Figma, Klaviyo, Meta Business Suite
-- **Workflow**: Git, GitHub, Postman, Zustand, TanStack Query
+## TECHNICAL & MARKETING SKILLS
+- **Frontend & UI Engineering**: React 19, Next.js, Electron 34, TypeScript, JavaScript (ES6+), Tailwind CSS v4, Shadcn UI, Framer Motion, GSAP, TanStack Virtual, Zustand, TanStack Query, Vite
+- **Backend & App Logic**: Node.js, Express.js, Python 3.12, PHP, Laravel, RESTful APIs, Serverless Functions (Vercel, Netlify), IPC stdio JSON-RPC
+- **Databases, Cloud & DevOps**: Supabase (PostgreSQL, RLS, Storage), SQLite, Firebase, MySQL, SQL Server, Vercel, Netlify, Render, Docker, Git, GitHub, Postman
+- **Languages & Media**: TypeScript, JavaScript, Python, PHP, Java, C#, Visual Basic, SQL, Unity 3D / Vuforia AR (App UI & web landing)
+- **Design & Creative**: Figma, Adobe Photoshop, Adobe Illustrator, Canva, CapCut, UI/UX Systems, Brand Identity, Product Packaging, Retail Apparel & Pubmats
+- **Marketing & Growth**: Social Media Management, Campaign Planning, Conversion Funnels, Email Marketing (Klaviyo), Meta Business Suite, Ad Creative & Messaging, Content Strategy, Short-Form Video, Audience Analytics, On-Ground & Pop-Up Sales
 
 ---
 
@@ -99,6 +99,7 @@ High-craft responsive showcase concepts exploring serene wellness service catalo
 - **Bachelor of Science in Computer Engineering (BSCpE)** — University of Rizal System – Antipolo Campus (2023 – Present)
 - **DOST-SEI Undergraduate S&T Scholar (R.A. 7687)** — Department of Science and Technology
 - **1st Runner-Up** — AppBuilders PH Hackathon 2026 (Top 2 out of 280+ Submissions)
-- **Vice President** — College of Engineering Student Council (AY 2025–2026)
+- **Vice President** — COENG Student Council (AY 2025–2026)
 - **Delegate (Marked Media)** — Echelon Philippines 2026
-- **Certifications:** Nexvision Innovations Internship (2026), AP Global IT Solutions Internship (2023), TESDA Microsoft Digital Literacy, freeCodeCamp Legacy Responsive Web Design V8
+- **Internships:** Nexvision Innovations Inc. (2026), AP Global IT Solutions Inc. (2023)
+- **Certifications:** freeCodeCamp Legacy Responsive Web Design V8, TESDA Microsoft Digital Literacy, Canva
