@@ -25,10 +25,17 @@ export interface KpiMetric {
   label: string;
 }
 
+export type PersonalGalleryCategoryId =
+  | "tech-events"
+  | "campus-varsity"
+  | "dj-off-duty";
+
 export interface PersonalGalleryItem {
   index: string;
   src: string;
   alt: string;
+  category: PersonalGalleryCategoryId;
+  orientation: "landscape" | "portrait";
 }
 
 export interface PersonalHobbyItem {
